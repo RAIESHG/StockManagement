@@ -62,7 +62,7 @@ namespace StockManagement
           
             }
         
-            SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={Quantity}, StockPurchaseDate='{DateTime.Now}' where ItemCode='{itemcode}'", mySqlConnection);
+            SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={Quantity}, StockPurchaseDate='{DateTime.Now.ToString("d")}' where ItemCode='{itemcode}'", mySqlConnection);
             commandd.ExecuteNonQuery();
             commandd.Dispose();
             mySqlConnection.Close();

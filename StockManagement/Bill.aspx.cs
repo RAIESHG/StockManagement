@@ -68,6 +68,7 @@ namespace StockManagement
             string itemname = DropDownList1.SelectedValue.ToString();
 
             int quantity = 0;
+            int Quantity = 0;
             if (TextBox1.Text != "")
             {
                 quantity = int.Parse(TextBox1.Text);
@@ -101,7 +102,7 @@ namespace StockManagement
                     while (QueryReader.Read())
                     {
 
-                        int Quantity = QueryReader.GetInt32(2) - quantity;
+                         Quantity = QueryReader.GetInt32(2) - quantity;
                         string StockPurchaseDate = QueryReader.GetString(3);
 
 
@@ -122,7 +123,7 @@ namespace StockManagement
             selectcommand.ExecuteNonQuery();
 
             selectcommand.Dispose();
-            SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={quantity} where ItemCode='{itemname}' ", mySqlConnection);
+            SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={Quantity} where ItemCode='{itemname}' ", mySqlConnection);
             commandd.ExecuteNonQuery();
             commandd.Dispose();
             mySqlConnection.Close();

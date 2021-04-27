@@ -45,8 +45,8 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        string itemcode = QueryReader.GetString(4);
-                        string itemname = QueryReader.GetString(5);
+                        string itemcode = QueryReader.GetString(0);
+                        string itemname = QueryReader.GetString(6);
                         string membernumber = QueryReader.GetString(1);
                         string quantities = QueryReader.GetString(3);
                         

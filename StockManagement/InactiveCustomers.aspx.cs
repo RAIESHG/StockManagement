@@ -35,7 +35,7 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        string membernumber = QueryReader.GetString(0);
+                        int membernumber = QueryReader.GetInt32(0);
                         string memberName = QueryReader.GetString(1);
                         string address = QueryReader.GetString(2);
                         string contactnumber = QueryReader.GetString(3);

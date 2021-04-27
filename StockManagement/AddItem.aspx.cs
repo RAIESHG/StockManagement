@@ -18,21 +18,58 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+    
             
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
 
             mySqlConnection.Open();
-            SqlCommand cmd = new SqlCommand($"Insert into dbo.Item values('{itemcodetb.Text}','{itemnametb.Text}','{descriptiontb.Text}','{pricetb.Text}','{categorytb.Text}')", mySqlConnection);
-            SqlCommand command = new SqlCommand($"Insert into dbo.Stock values('21','{itemcodetb.Text}','{quantitytb.Text}','{DateTime.Now.ToString("d")}')", mySqlConnection);
-
-
+            SqlCommand cmd = new SqlCommand($"Insert into dbo.Item values('{itemnametb.Text}','{descriptiontb.Text}','{pricetb.Text}','{categorytb.Text}')", mySqlConnection);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
 
-            command.ExecuteNonQuery();
-            command.Dispose();
+            int itemNumber = 0;
+
+
+            SqlCommand selectcommand = new SqlCommand($"Select * from dbo.Item where ItemName='{itemnametb.Text}'", mySqlConnection);
+
+            using (SqlDataReader QueryReader = selectcommand.ExecuteReader())
+            {
+                if (QueryReader.HasRows)
+                {
+
+                    while (QueryReader.Read())
+                    {
+
+              
+                         itemNumber = QueryReader.GetInt32(0);   
+
+
+
+                    }
+
+
+                }
+
+                /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
+                         cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
+                         cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
+                         cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
+
+
+            }
+         
+
+            selectcommand.ExecuteNonQuery();
+
+            selectcommand.Dispose();
+            SqlCommand insertcommand = new SqlCommand($"Insert into dbo.Stock values({itemNumber},{int.Parse(quantitytb.Text)},'{DateTime.Now.ToString("d")}')", mySqlConnection);
+            insertcommand.ExecuteNonQuery();
+
+            insertcommand.Dispose();
+
+
 
         }
     }

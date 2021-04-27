@@ -40,11 +40,11 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        string itemCode = QueryReader.GetString(1);
+                        int itemCode = QueryReader.GetInt32(1);
                         int Quantity = QueryReader.GetInt32(2);
                         string StockPurchaseDate = QueryReader.GetString(3);
                         string status = "";
-                        if (Quantity < 10)
+                        if (Quantity < 10 && Quantity >0)
                         {
 
                             status = "Running out of stock";

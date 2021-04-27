@@ -35,7 +35,7 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        string itemCode = QueryReader.GetString(1);
+                        int itemCode = QueryReader.GetInt32(1);
                         int Quantity = QueryReader.GetInt32(2);
                         string StockPurchaseDate = QueryReader.GetString(3);
                  

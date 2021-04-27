@@ -1,10 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddMember.aspx.cs" Inherits="StockManagement.AddMember" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label ID="Label1" runat="server" Text="Member Number"></asp:Label>
-<asp:TextBox ID="membernumbertb" runat="server"></asp:TextBox>
-    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="MemberName" DataValueField="MemberNumber">
-    </asp:DropDownList>
-    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
 <br />
 <asp:Label ID="Label3" runat="server" Text="Member Name"></asp:Label>
 <asp:TextBox ID="membernametb" runat="server"></asp:TextBox>
