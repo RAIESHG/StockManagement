@@ -6,6 +6,7 @@
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
      <table width="100%" align="center" cellpadding="2" cellspacing="2" border="0" bgcolor="#EAEAEA" >
         <tr align="left" style="background-color:#004080;color:White;" >
+               <td> ItemCode </td>        
             <td> ItemName </td>                        
             <td> Member Number </td>            
             <td>Quantity</td> 

@@ -33,7 +33,7 @@ namespace StockManagement
 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand($"Select * from dbo.CustomerPurchase where MemberNumber='{dropdown}' and BillingDate>='{dateForButton}'", mySqlConnection);
+            SqlCommand cmd = new SqlCommand($"Select * from dbo.CustomerPurchase c Join dbo.Item i on c.ItemCode = i.ItemCode where MemberNumber='{dropdown}' and BillingDate>='{dateForButton}'", mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
             string data = "";
@@ -45,12 +45,14 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        string itemcode = QueryReader.GetString(0);
+                        string itemcode = QueryReader.GetString(4);
+                        string itemname = QueryReader.GetString(5);
                         string membernumber = QueryReader.GetString(1);
                         string quantities = QueryReader.GetString(3);
+                        
                         string billingdate = QueryReader.GetDateTime(2).ToString("d");
                      
-                        data += "<tr><td> " + itemcode + "</td><td> " + membernumber + "</td><td> " + quantities + "</td><td> " + billingdate + "</td><tr> ";
+                        data += "<tr><td> "+ itemcode + "</td><td> "+ itemname + "</td><td> " + membernumber + "</td><td> " + quantities + "</td><td> " + billingdate + "</td><tr> ";
                     }
                     mySqlConnection.Close();
 

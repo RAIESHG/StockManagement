@@ -24,15 +24,15 @@ namespace StockManagement
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
 
             mySqlConnection.Open();
-            SqlCommand cmd = new SqlCommand("Insert into dbo.Item values(@ItemCode,@ItemName,@Description,@Price,@Category)", mySqlConnection);
-            cmd.Parameters.AddWithValue("@ItemCode", "1");
-            cmd.Parameters.AddWithValue("@ItemName", "Raiesh Ghimire");
-            cmd.Parameters.AddWithValue("@Description", "Sinamangal-9, Kathmandu");
-            cmd.Parameters.AddWithValue("@Price", 200);
-            cmd.Parameters.AddWithValue("@Category", "raieshg@gmail.com");
-            
+            SqlCommand cmd = new SqlCommand($"Insert into dbo.Item values('{itemcodetb.Text}','{itemnametb.Text}','{descriptiontb.Text}','{pricetb.Text}','{categorytb.Text}')", mySqlConnection);
+            SqlCommand command = new SqlCommand($"Insert into dbo.Stock values('21','{itemcodetb.Text}','{quantitytb.Text}','{DateTime.Now.ToString("d")}')", mySqlConnection);
+
+
             cmd.ExecuteNonQuery();
             cmd.Dispose();
+
+            command.ExecuteNonQuery();
+            command.Dispose();
 
         }
     }

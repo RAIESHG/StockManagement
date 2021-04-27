@@ -24,8 +24,8 @@ namespace StockManagement
         public string getbill()
         {
             string dropdown = DropDownList1.SelectedValue.ToString();
-            
-            
+
+
 
             int quantity = 0;
             if (TextBox1.Text != "")
@@ -76,13 +76,56 @@ namespace StockManagement
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
             mySqlConnection.Open();
             SqlCommand cmd = new SqlCommand($"Insert into dbo.CustomerPurchase values('{itemname}','{member}','{DateTime.Now.ToString("d")}','{quantity}')", mySqlConnection);
-   /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
-            cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
-            cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
-            cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
-            
+
             cmd.ExecuteNonQuery();
+
             cmd.Dispose();
+
+
+
+
+
+
+            SqlCommand selectcommand = new SqlCommand($"Select * from dbo.Stock where ItemCode = '{itemname}' ", mySqlConnection);
+
+         
+            selectcommand.Connection = mySqlConnection;
+
+            string data = "";
+
+            using (SqlDataReader QueryReader = selectcommand.ExecuteReader())
+            {
+                if (QueryReader.HasRows)
+                {
+
+                    while (QueryReader.Read())
+                    {
+
+                        int Quantity = QueryReader.GetInt32(2) - quantity;
+                        string StockPurchaseDate = QueryReader.GetString(3);
+
+
+
+                    }
+    
+
+                }
+         
+                /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
+                         cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
+                         cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
+                         cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
+
+              
+            }
+
+            selectcommand.ExecuteNonQuery();
+
+            selectcommand.Dispose();
+            SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={quantity} where ItemCode='{itemname}' ", mySqlConnection);
+            commandd.ExecuteNonQuery();
+            commandd.Dispose();
+            mySqlConnection.Close();
         }
     }
 }
