@@ -21,11 +21,11 @@ namespace StockManagement
         {
             getStockData();
         }
-        public string getStockData()
+        public int getStockData()
         {
             string dropdown = DropDownList1.SelectedValue.ToString();
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-
+            int Quantity = 0;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
             SqlCommand cmd = new SqlCommand("Select * from dbo.Stock where ItemCode='"+dropdown+"'", mySqlConnection);
             mySqlConnection.Open();
@@ -41,7 +41,7 @@ namespace StockManagement
                     while (QueryReader.Read())
                     {
                         int itemCode = QueryReader.GetInt32(1);
-                        int Quantity = QueryReader.GetInt32(2);
+                         Quantity = QueryReader.GetInt32(2);
                         string StockPurchaseDate = QueryReader.GetString(3);
                         string status = "";
                         if (Quantity < 10 && Quantity >0)
@@ -64,7 +64,7 @@ namespace StockManagement
                     mySqlConnection.Close();
 
                 }
-                return data;
+                return Quantity;
             }
         }
     }

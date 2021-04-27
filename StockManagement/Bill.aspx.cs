@@ -73,6 +73,7 @@ namespace StockManagement
             {
                 quantity = int.Parse(TextBox1.Text);
             }
+     
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
             mySqlConnection.Open();
