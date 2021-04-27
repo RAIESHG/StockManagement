@@ -13,7 +13,7 @@
             <td>Status</td>
         </tr>
 
-        <%=getWhileLoopData()%>
+        <%=getStockData()%>
 
     </table>
 </asp:Content>
