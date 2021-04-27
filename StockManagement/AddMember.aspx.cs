@@ -18,8 +18,8 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
-           string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+            string data = DropDownList1.SelectedValue.ToString();
+            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
           
@@ -39,6 +39,19 @@ namespace StockManagement
 
            
          
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+
+            SqlConnection mySqlConnection = new SqlConnection(connectionstring);
+
+            mySqlConnection.Open();
+            string data = DropDownList1.SelectedValue.ToString();
+            SqlCommand cmd = new SqlCommand("Delete from dbo.Member Where MemberNumber='"+data+"'", mySqlConnection);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
         }
     }
     }
