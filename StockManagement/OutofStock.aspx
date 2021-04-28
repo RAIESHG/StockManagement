@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table width="100%" align="center" cellpadding="2" cellspacing="2" border="0" bgcolor="#EAEAEA" >
         <tr align="left" style="background-color:#004080;color:White;" >
-            <td> Stock </td>                        
+            <td> ItemCode </td>
+            <td> Item Name </td>
             <td> Quantity </td>            
             <td>StockPurchaseDate</td> 
         

@@ -21,7 +21,7 @@ namespace StockManagement
         {
             getStockData();
         }
-        public int getStockData()
+        public string getStockData()
         {
             string dropdown = DropDownList1.SelectedValue.ToString();
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
@@ -59,12 +59,12 @@ namespace StockManagement
                         }
 
 
-                        data += "<tr><td> " + itemCode + "</td><td> " + Quantity+ "</td><td> "+StockPurchaseDate+ "</td><td> " + status + "</td><tr> ";
+                        data += "<tr><td>"+itemCode+"</td><td>"+Quantity+"</td><td>"+StockPurchaseDate+"</td><td>"+status+"</td><tr> ";
                     }
                     mySqlConnection.Close();
 
                 }
-                return Quantity;
+                return data;
             }
         }
     }

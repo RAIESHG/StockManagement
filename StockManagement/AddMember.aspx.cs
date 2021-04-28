@@ -16,20 +16,13 @@ namespace StockManagement
         protected void Button1_Click(object sender, EventArgs e)
         {
      
-            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-
-            SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-          
+                string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+                SqlConnection mySqlConnection = new SqlConnection(connectionstring);
                 mySqlConnection.Open();
                 SqlCommand cmd = new SqlCommand($"Insert into dbo.Member values('{membernametb.Text}','{addresstb.Text}','{contactnumbertb.Text}','{emailtb.Text}','{membertypetb.Text}')", mySqlConnection);
-         
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 cmd.Dispose();
-
-
-
-
-           
+                    
          
         }
 

@@ -56,14 +56,15 @@
                          
                          <li><a runat="server" href="~/AddMember">AddMember</a></li>
                         <li><a runat="server" href="~/AddItem">AddItem</a></li>
+                          <li><a runat="server" href="~/AddStock">Add Stock</a></li>
+                          <li><a runat="server" href="~/ItemStock">Item Stock</a></li>
                         <li><a runat="server" href="~/Bill">Generate Bill</a></li>
-                        <li><a runat="server" href="~/InactiveCustomers">InActive Customers</a></li>
-                        <li><a runat="server" href="~/ItemStock">Item Stock</a></li>
+                           <li><a runat="server" href="~/PurchaseDetail">Purchase Detail</a></li>
                         <li><a runat="server" href="~/OutofStock">OutofStock Items</a></li>
-                          <li><a runat="server" href="~/PurchaseDetail">Purchase Detail</a></li>
-                         <li><a runat="server" href="~/AddStock">Add Stock</a></li>
                         <li><a runat="server" href="~/RemoveStock">Remove Stock</a></li>
                         <li><a runat="server" href="~/UnsoldItems">Unsold Items</a></li>
+                        <li><a runat="server" href="~/InactiveCustomers">InActive Customers</a></li>
+
                     </ul>
                 </div>
             </div>

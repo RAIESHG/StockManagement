@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace StockManagement
 {
@@ -20,7 +21,7 @@ namespace StockManagement
         {
             getbill();
         }
-
+        int quantity = 0;
         public string getbill()
         {
             string dropdown = DropDownList1.SelectedValue.ToString();
@@ -66,68 +67,97 @@ namespace StockManagement
             string member = DropDownList2.SelectedValue.ToString();
 
             string itemname = DropDownList1.SelectedValue.ToString();
+            int stockval = checkstock(itemname);
+           
+                quantity = 0;
+                int Quantity = 0;
+                if (TextBox1.Text != "")
+                {
+                    quantity = int.Parse(TextBox1.Text);
+                }
+                if (stockval > quantity)
+                {
+                string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+                SqlConnection mySqlConnection = new SqlConnection(connectionstring);
+                mySqlConnection.Open();
+                SqlCommand cmd = new SqlCommand($"Insert into dbo.CustomerPurchase values('{itemname}','{member}','{DateTime.Now.ToString("d")}','{quantity}')", mySqlConnection);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                SqlCommand selectcommand = new SqlCommand($"Select * from dbo.Stock where ItemCode = '{itemname}' ", mySqlConnection);
+                selectcommand.Connection = mySqlConnection;
+                string data = "";
+                using (SqlDataReader QueryReader = selectcommand.ExecuteReader())
+                {
+                    if (QueryReader.HasRows)
+                    {
 
-            int quantity = 0;
-            int Quantity = 0;
-            if (TextBox1.Text != "")
-            {
-                quantity = int.Parse(TextBox1.Text);
+                        while (QueryReader.Read())
+                        {
+
+                            Quantity = QueryReader.GetInt32(2) - quantity;
+                            string StockPurchaseDate = QueryReader.GetString(3);
+
+
+
+                        }
+
+
+                    }
+
+                    /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
+                             cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
+                             cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
+                             cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
+
+
+                }
+
+                selectcommand.ExecuteNonQuery();
+
+                selectcommand.Dispose();
+                SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={Quantity} where ItemCode='{itemname}' ", mySqlConnection);
+                commandd.ExecuteNonQuery();
+                commandd.Dispose();
+                mySqlConnection.Close();
             }
-     
+            else {
+
+                MessageBox.Show("Sorry Desired Quantity not Available in Stock");
+
+            }
+        }
+        public int checkstock(String item)
+        {
+            string dropdown = DropDownList1.SelectedValue.ToString();
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+            int Quantity = 0;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
+            SqlCommand cmd = new SqlCommand($"Select * from dbo.Stock where ItemCode='{item}'", mySqlConnection);
             mySqlConnection.Open();
-            SqlCommand cmd = new SqlCommand($"Insert into dbo.CustomerPurchase values('{itemname}','{member}','{DateTime.Now.ToString("d")}','{quantity}')", mySqlConnection);
-
-            cmd.ExecuteNonQuery();
-
-            cmd.Dispose();
-
-
-
-
-
-
-            SqlCommand selectcommand = new SqlCommand($"Select * from dbo.Stock where ItemCode = '{itemname}' ", mySqlConnection);
-
-         
-            selectcommand.Connection = mySqlConnection;
+            cmd.Connection = mySqlConnection;
 
             string data = "";
 
-            using (SqlDataReader QueryReader = selectcommand.ExecuteReader())
+            using (SqlDataReader QueryReader = cmd.ExecuteReader())
             {
                 if (QueryReader.HasRows)
                 {
 
                     while (QueryReader.Read())
                     {
-
-                         Quantity = QueryReader.GetInt32(2) - quantity;
-                        string StockPurchaseDate = QueryReader.GetString(3);
-
+                    
+                        Quantity = QueryReader.GetInt32(2);
+               
+             
+                      
 
 
                     }
-    
+                    mySqlConnection.Close();
 
                 }
-         
-                /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
-                         cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
-                         cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
-                         cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
-
-              
+                return Quantity;
             }
-
-            selectcommand.ExecuteNonQuery();
-
-            selectcommand.Dispose();
-            SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity={Quantity} where ItemCode='{itemname}' ", mySqlConnection);
-            commandd.ExecuteNonQuery();
-            commandd.Dispose();
-            mySqlConnection.Close();
-        }
+        } 
     }
 }
