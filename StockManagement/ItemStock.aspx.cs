@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -42,7 +43,9 @@ namespace StockManagement
                     {
                         int itemCode = QueryReader.GetInt32(1);
                          Quantity = QueryReader.GetInt32(2);
-                        string StockPurchaseDate = QueryReader.GetString(3);
+                        DateTime dateTime = QueryReader.GetDateTime(3);
+                        string StockPurchaseDate = dateTime.ToString("d", new CultureInfo("en-US"));
+                        /*string StockPurchaseDate = QueryReader.GetString(3);*/
                         string status = "";
                         if (Quantity < 10 && Quantity >0)
                         {

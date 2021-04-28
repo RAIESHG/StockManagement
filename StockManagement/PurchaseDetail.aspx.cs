@@ -18,7 +18,10 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+         
             prevPurchaseDetails();
+            /*ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);*/
+
         }
 
         public string prevPurchaseDetails()
@@ -57,6 +60,7 @@ namespace StockManagement
                     mySqlConnection.Close();
 
                 }
+
                 return data;
             }
         }
