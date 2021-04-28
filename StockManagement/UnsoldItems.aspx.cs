@@ -20,9 +20,9 @@ namespace StockManagement
         {
 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-            string dateForButton = DateTime.Now.AddDays(-31).ToString("d");
+            string invoiceddate = DateTime.Now.AddDays(-31).ToString("d");
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand($"Select * from dbo.Member m Join dbo.CustomerPurchase c on m.MemberNumber=c.MemberNumber where c.BillingDate<='{dateForButton}' and  c.BillingDate<='{dateForButton}'", mySqlConnection);
+            SqlCommand cmd = new SqlCommand($"Select * from dbo.Stock s Join dbo.Item i on s.ItemCode=i.ItemCode Join dbo.CustomerPurchase c on c.ItemCode=i.ItemCode where c.BillingDate<='{invoiceddate}'", mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
 
@@ -35,18 +35,18 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        int Membernumber = QueryReader.GetInt32(0);
-                        string MemberName = QueryReader.GetString(1);
-                        string address = QueryReader.GetString(2);
-                        string contactnumber = QueryReader.GetString(3);
-                        string email = QueryReader.GetString(4);
-                        string Membertype = QueryReader.GetString(5);
+                        int itemcode = QueryReader.GetInt32(4);
+                        string itemname = QueryReader.GetString(5);
+                        string description = QueryReader.GetString(6);
+                        int price = QueryReader.GetInt32(7);
+                        string category = QueryReader.GetString(8);
+                        string billingdate = QueryReader.GetDateTime(11).ToString("d");
 
 
 
 
 
-                        data += "<tr><td> " + Membernumber + "</td><td> " + MemberName + "</td><td> " + address + "</td><td> " + contactnumber + "</td><td> " + email + "</td><td> " + Membertype + "</td><tr> ";
+                        data += "<tr><td> " + itemcode + "</td><td> " + itemname + "</td><td> " + description + "</td><td> " + price + "</td><td> " + category + "</td><td> " + billingdate + "</td><tr> ";
                     }
                     mySqlConnection.Close();
 

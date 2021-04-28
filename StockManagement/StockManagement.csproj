@@ -107,10 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="AddItem.aspx" />
-    <Content Include="AddMember.aspx" />
-    <Content Include="AddStock.aspx" />
-    <Content Include="Bill.aspx" />
+    <Content Include="InsertOperations.aspx" />
+    <Content Include="InvoiceandStockInfo.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -118,7 +116,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="DisplayItems.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -132,11 +129,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="InactiveCustomers.aspx" />
-    <Content Include="ItemStock.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="OutofStock.aspx" />
-    <Content Include="PurchaseDetail.aspx" />
-    <Content Include="RemoveStock.aspx" />
+    <Content Include="InvoiceRecord.aspx" />
+    <Content Include="DeleteItems.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -173,26 +169,12 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddItem.aspx.cs">
-      <DependentUpon>AddItem.aspx</DependentUpon>
+    <Compile Include="InsertOperations.aspx.cs">
+      <DependentUpon>InsertOperations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddItem.aspx.designer.cs">
-      <DependentUpon>AddItem.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddMember.aspx.cs">
-      <DependentUpon>AddMember.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddMember.aspx.designer.cs">
-      <DependentUpon>AddMember.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddStock.aspx.cs">
-      <DependentUpon>AddStock.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddStock.aspx.designer.cs">
-      <DependentUpon>AddStock.aspx</DependentUpon>
+    <Compile Include="InsertOperations.aspx.designer.cs">
+      <DependentUpon>InsertOperations.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -203,12 +185,12 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Bill.aspx.cs">
-      <DependentUpon>Bill.aspx</DependentUpon>
+    <Compile Include="InvoiceandStockInfo.aspx.cs">
+      <DependentUpon>InvoiceandStockInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bill.aspx.designer.cs">
-      <DependentUpon>Bill.aspx</DependentUpon>
+    <Compile Include="InvoiceandStockInfo.aspx.designer.cs">
+      <DependentUpon>InvoiceandStockInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -224,13 +206,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DisplayItems.aspx.cs">
-      <DependentUpon>DisplayItems.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DisplayItems.aspx.designer.cs">
-      <DependentUpon>DisplayItems.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,13 +215,6 @@
     </Compile>
     <Compile Include="InactiveCustomers.aspx.designer.cs">
       <DependentUpon>InactiveCustomers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ItemStock.aspx.cs">
-      <DependentUpon>ItemStock.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ItemStock.aspx.designer.cs">
-      <DependentUpon>ItemStock.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -263,19 +231,19 @@
       <DependentUpon>OutofStock.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchaseDetail.aspx.cs">
-      <DependentUpon>PurchaseDetail.aspx</DependentUpon>
+    <Compile Include="InvoiceRecord.aspx.cs">
+      <DependentUpon>InvoiceRecord.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PurchaseDetail.aspx.designer.cs">
-      <DependentUpon>PurchaseDetail.aspx</DependentUpon>
+    <Compile Include="InvoiceRecord.aspx.designer.cs">
+      <DependentUpon>InvoiceRecord.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RemoveStock.aspx.cs">
-      <DependentUpon>RemoveStock.aspx</DependentUpon>
+    <Compile Include="DeleteItems.aspx.cs">
+      <DependentUpon>DeleteItems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RemoveStock.aspx.designer.cs">
-      <DependentUpon>RemoveStock.aspx</DependentUpon>
+    <Compile Include="DeleteItems.aspx.designer.cs">
+      <DependentUpon>DeleteItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
