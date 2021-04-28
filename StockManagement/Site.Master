@@ -40,7 +40,7 @@
               
         </asp:ScriptManager>
           
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background:#507CD1;">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -51,19 +51,19 @@
                  
                 </div>
                  <%--Add Home page--%>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" >
                     <ul class="nav navbar-nav">
                          
-                         <li><a runat="server" href="~/AddMember">AddMember</a></li>
-                        <li><a runat="server" href="~/AddItem">AddItem</a></li>
-                          <li><a runat="server" href="~/AddStock">Add Stock</a></li>
-                          <li><a runat="server" href="~/ItemStock">Item Stock</a></li>
-                        <li><a runat="server" href="~/Bill">Generate Bill</a></li>
-                           <li><a runat="server" href="~/PurchaseDetail">Purchase Detail</a></li>
-                        <li><a runat="server" href="~/OutofStock">OutofStock Items</a></li>
-                        <li><a runat="server" href="~/RemoveStock">Remove Stock</a></li>
-                        <li><a runat="server" href="~/UnsoldItems">Unsold Items</a></li>
-                        <li><a runat="server" href="~/InactiveCustomers">InActive Customers</a></li>
+                         <li><a runat="server" href="~/AddMember" style="color:white;  ">AddMember</a></li>
+                        <li><a runat="server" href="~/AddItem" style="color:white;">AddItem</a></li>
+                          <li><a runat="server" href="~/AddStock" style="color:white;">Add Stock</a></li>
+                          <li><a runat="server" href="~/ItemStock" style="color:white;">Item Stock</a></li>
+                        <li><a runat="server" href="~/Bill" style="color:white;">Generate Bill</a></li>
+                           <li><a runat="server" href="~/PurchaseDetail" style="color:white;">Purchase Detail</a></li>
+                        <li><a runat="server" href="~/OutofStock" style="color:white;">OutofStock Items</a></li>
+                        <li><a runat="server" href="~/RemoveStock" style="color:white;">Remove Stock</a></li>
+                        <li><a runat="server" href="~/UnsoldItems" style="color:white;">Unsold Items</a></li>
+                        <li><a runat="server" href="~/InactiveCustomers" style="color:white;">InActive Customers</a></li>
 
                     </ul>
                 </div>

@@ -1,16 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InactiveCustomers.aspx.cs" Inherits="StockManagement.InactiveCustomers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <table width="100%" align="center" cellpadding="2" cellspacing="2" border="0" bgcolor="#EAEAEA" >
-        <tr align="left" style="background-color:#004080;color:White;" >
-            <td> MemberNumber </td>                        
-            <td> MemberName </td>            
-            <td>Address</td> 
-            <td>ContactNumber</td>
-             <td>Email</td>
-             <td>MemberType</td>
+
+          <h1  class="page-header">In-Active Customers</h1>
+
+     <div class="table-responsive">
+     <table class="table" >
+  <tr style="background-color:#507CD1;">
+            <td style="color:white;"> MemberNumber</td>
+            <td style="color:white;"> MemberName </td>
+            <td style="color:white;">Address</td> 
+            <td style="color:white;">ContactNumber</td>
+             <td style="color:white;">Email</td>
+             <td style="color:white;">MemberType</td>
         </tr>
 
         <%=inactiveMembers()%>
 
+
     </table>
+         </div>
 </asp:Content>

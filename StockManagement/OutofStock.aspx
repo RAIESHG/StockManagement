@@ -1,16 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OutofStock.aspx.cs" Inherits="StockManagement.OutofStock" %>
-  
+
+       
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <table width="100%" align="center" cellpadding="2" cellspacing="2" border="0" bgcolor="#EAEAEA" >
-        <tr align="left" style="background-color:#004080;color:White;" >
-            <td> ItemCode </td>
-            <td> Item Name </td>
-            <td> Quantity </td>            
-            <td>StockPurchaseDate</td> 
-        
+       <h1  class="page-header">Out Of Stock</h1>
+    <div class="table-responsive">
+     <table class="table" >
+          <tr style="background-color:#507CD1;">
+            <td style="color:white;"> ItemCode </td>
+            <td style="color:white;"> Item Name </td>
+            <td style="color:white;"> Quantity </td>
+            <td style="color:white;">StockPurchaseDate</td> 
+
         </tr>
 
         <%=getOutofStock()%>
 
     </table>
+         </div>
+
 </asp:Content>
