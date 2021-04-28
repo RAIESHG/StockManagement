@@ -37,7 +37,8 @@
 
             </td>
             <td>
-                 <asp:TextBox ID="categorytb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryName" DataValueField="CategoryNumber">
+                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -52,6 +53,7 @@
         <tr>
                         <td colspan="2">
                             <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
                         </td>
         </tr>
     </table>

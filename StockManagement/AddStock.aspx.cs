@@ -45,7 +45,7 @@ namespace StockManagement
                     {
 
                          Quantity = QueryReader.GetInt32(2) + quantity;
-                        string StockPurchaseDate = QueryReader.GetString(3);
+                        string StockPurchaseDate = QueryReader.GetDateTime(3).ToString("d");
 
 
 
