@@ -11,7 +11,7 @@ namespace StockManagement
 {
 
 
-    public partial class Login
+    public partial class Change_Password
     {
 
         /// <summary>

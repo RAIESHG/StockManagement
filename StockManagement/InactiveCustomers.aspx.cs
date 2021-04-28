@@ -22,11 +22,12 @@ namespace StockManagement
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             string dateForButton = DateTime.Now.AddDays(-31).ToString("d");
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand($@"SELECT dbo.Member.memberNumber,dbo.Member.memberName,dbo.Member.Address,
-dbo.Member.ContactNumber, dbo.Member.Email,dbo.Member.membertype, MAX(dbo.CustomerPurchase.BillingDate) AS 'Max Date'
-from dbo.Member Join dbo.CustomerPurchase on dbo.Member.MemberNumber = dbo.CustomerPurchase.MemberNumber
-where dbo.CustomerPurchase.BillingDate! > '{dateForButton}'
-GROUP BY dbo.Member.MemberNumber, dbo.Member.memberName, dbo.Member.Address, dbo.Member.ContactNumber, dbo.Member.Email, dbo.Member.membertype", mySqlConnection);
+            SqlCommand cmd = new SqlCommand($@"Select * from dbo.Member where dbo.Member.MemberNumber In ((Select (dbo.CustomerPurchase.MemberNumber) from dbo.Member
+            Join dbo.CustomerPurchase on dbo.Member.MemberNumber=dbo.CustomerPurchase.MemberNumber)
+            EXCEPT
+            (Select dbo.CustomerPurchase.MemberNumber from dbo.Member
+            Join dbo.CustomerPurchase on dbo.Member.MemberNumber=dbo.CustomerPurchase.MemberNumber
+            where dbo.CustomerPurchase.BillingDate>='{dateForButton}'));", mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
 

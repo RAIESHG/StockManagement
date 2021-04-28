@@ -110,6 +110,7 @@
     <Content Include="AddMember.aspx" />
     <Content Include="AddStock.aspx" />
     <Content Include="Bill.aspx" />
+    <Content Include="Change Password.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -129,6 +130,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="images\new_logo.png" />
     <Content Include="InactiveCustomers.aspx" />
     <Content Include="ItemStock.aspx" />
     <Content Include="Login.aspx" />
@@ -214,6 +216,13 @@
     </Compile>
     <Compile Include="Bill.aspx.designer.cs">
       <DependentUpon>Bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Change Password.aspx.cs">
+      <DependentUpon>Change Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Change Password.aspx.designer.cs">
+      <DependentUpon>Change Password.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
