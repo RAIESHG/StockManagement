@@ -130,7 +130,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="images\new_logo.png" />
+    <Content Include="images\logo.png" />
     <Content Include="InactiveCustomers.aspx" />
     <Content Include="ItemStock.aspx" />
     <Content Include="Login.aspx" />

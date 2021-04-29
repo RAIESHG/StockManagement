@@ -42,7 +42,9 @@
           <div style="display:flex;">
 
                 <div class="sidenav">
-      <a runat="server"  href="~/"><asp:Image ID="ImageLogo" runat="server" Height="1.5em" ImageUrl="~/img/new_logo.png" /></a>
+                    
+      <a runat="server"  href="~/">
+          <img src="images/logo.png" />RBSS</a>
                
                          <a runat="server" href="~/AddMember" >AddMember</a>
                      <a runat="server" href="~/AddItem" >AddItem</a>
