@@ -18,14 +18,14 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-    
-            
+
+            int categoryid = int.Parse(DropDownList1.SelectedValue.ToString());
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
 
             mySqlConnection.Open();
-            SqlCommand cmd = new SqlCommand($"Insert into dbo.Item values('{itemnametb.Text}','{descriptiontb.Text}','{pricetb.Text}','{categorytb.Text}')", mySqlConnection);
+            SqlCommand cmd = new SqlCommand($"Insert into dbo.Item values('{itemnametb.Text}','{descriptiontb.Text}','{pricetb.Text}','{categoryid}')", mySqlConnection);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
 

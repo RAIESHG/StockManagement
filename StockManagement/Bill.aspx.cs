@@ -36,7 +36,7 @@ namespace StockManagement
 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand("Select * from dbo.Item where ItemCode='" + dropdown + "'", mySqlConnection);
+            SqlCommand cmd = new SqlCommand("Select * from dbo.Item i join category c on i.CategoryNumber=c.CategoryNumber where i.ItemCode='" + dropdown + "'", mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
             string data = "";
@@ -51,7 +51,7 @@ namespace StockManagement
                         string itemname = QueryReader.GetString(1);
                         int unitprice = QueryReader.GetInt32(3);
                         int price = QueryReader.GetInt32(3) * quantity;
-                        string category = QueryReader.GetString(4);
+                        string category = QueryReader.GetString(6);
                         string status = "";
                         data += "<tr><td> " + itemname + "</td><td> " + category + "</td><td> " + quantity + "</td><td> " + unitprice + "</td><td> " + price + "</td><tr> ";
                     }
@@ -75,12 +75,12 @@ namespace StockManagement
                 {
                     quantity = int.Parse(TextBox1.Text);
                 }
-                if (stockval > quantity)
+                if (stockval >= quantity)
                 {
                 string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
                 SqlConnection mySqlConnection = new SqlConnection(connectionstring);
                 mySqlConnection.Open();
-                SqlCommand cmd = new SqlCommand($"Insert into dbo.CustomerPurchase values('{itemname}','{member}','{DateTime.Now.ToString("d")}','{quantity}')", mySqlConnection);
+                SqlCommand cmd = new SqlCommand($"Insert into dbo.CustomerPurchase values('{itemname}','{member}','{DateTime.Now}','{quantity}')", mySqlConnection);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 SqlCommand selectcommand = new SqlCommand($"Select * from dbo.Stock where ItemCode = '{itemname}' ", mySqlConnection);
@@ -95,7 +95,7 @@ namespace StockManagement
                         {
 
                             Quantity = QueryReader.GetInt32(2) - quantity;
-                            string StockPurchaseDate = QueryReader.GetString(3);
+                            string StockPurchaseDate = QueryReader.GetDateTime(3).ToString("d");
 
 
 

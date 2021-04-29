@@ -11,35 +11,44 @@ namespace StockManagement
 {
 
 
-    public partial class Login
+    public partial class AddCategory
     {
 
         /// <summary>
-        /// usernametb control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox usernametb;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// passwordtb control.
+        /// catnametb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordtb;
+        protected global::System.Web.UI.WebControls.TextBox catnametb;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// categorydesctb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox categorydesctb;
 
         /// <summary>
         /// Button1 control.

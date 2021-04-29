@@ -16,13 +16,18 @@ namespace StockManagement
 
         }
 
-        public string unsoldItems()
+        public string unsolditems()
         {
 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             string dateForButton = DateTime.Now.AddDays(-31).ToString("d");
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand($"Select * from dbo.Member m Join dbo.CustomerPurchase c on m.MemberNumber=c.MemberNumber where c.BillingDate<='{dateForButton}' and  c.BillingDate<='{dateForButton}'", mySqlConnection);
+            SqlCommand cmd = new SqlCommand($@"Select * from dbo.Item Join dbo.Stock on dbo.Stock.ItemCode=dbo.Item.ItemCode Join dbo.CustomerPurchase on dbo.CustomerPurchase.ItemCode=dbo.Item.ItemCode where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
+            Join dbo.CustomerPurchase on dbo.Item.ItemCode = dbo.CustomerPurchase.ItemCode)
+            EXCEPT
+            (Select dbo.Item.ItemCode MemberNumber from dbo.Item
+            Join dbo.CustomerPurchase on dbo.Item.ItemCode = dbo.CustomerPurchase.ItemCode
+            where dbo.CustomerPurchase.BillingDate >= '{dateForButton}')); ", mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
 
@@ -35,18 +40,15 @@ namespace StockManagement
 
                     while (QueryReader.Read())
                     {
-                        int Membernumber = QueryReader.GetInt32(0);
-                        string MemberName = QueryReader.GetString(1);
-                        string address = QueryReader.GetString(2);
-                        string contactnumber = QueryReader.GetString(3);
-                        string email = QueryReader.GetString(4);
-                        string Membertype = QueryReader.GetString(5);
+                        int itemCode = QueryReader.GetInt32(0);
+                        string itemname = QueryReader.GetString(1);
+                        int Quantity = QueryReader.GetInt32(7);
+                        string lastpurchasedon = QueryReader.GetDateTime(12).ToString("d");
 
 
 
 
-
-                        data += "<tr><td> " + Membernumber + "</td><td> " + MemberName + "</td><td> " + address + "</td><td> " + contactnumber + "</td><td> " + email + "</td><td> " + Membertype + "</td><tr> ";
+                        data += "<tr><td> " + itemCode + "</td><td> " + itemname + "</td><td> " + Quantity + "</td><td> " + lastpurchasedon + "</td><tr> ";
                     }
                     mySqlConnection.Close();
 

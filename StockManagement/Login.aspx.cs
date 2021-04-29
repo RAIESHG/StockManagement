@@ -14,7 +14,7 @@ namespace StockManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
         }
         public string runningOutofStock()
         {
@@ -32,30 +32,48 @@ namespace StockManagement
             {
                 if (QueryReader.HasRows)
                 {
+                    Response.Redirect("AddItem.aspx");
 
-                    while (QueryReader.Read())
-                    {
-                        string itemCode = QueryReader.GetString(1);
-                        int Quantity = QueryReader.GetInt32(2);
-                        string StockPurchaseDate = QueryReader.GetString(3);
-
-                        stock = stock + "\n" + itemCode;
-
-
-               
-                    }
-                    MessageBox.Show(stock);
 
                     mySqlConnection.Close();
 
                 }
-                return data;
-            }
+                else {
+                    MessageBox.Show("Login Failure Please Try Again");
+
+
+                }
+
+            } return data;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            runningOutofStock();
+            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+
+            SqlConnection mySqlConnection = new SqlConnection(connectionstring);
+            SqlCommand cmd = new SqlCommand($"Select * from dbo.Users where dbo.Users.Username='{usernametb.Text}' and dbo.Users.Password='{passwordtb.Text}'", mySqlConnection);
+            mySqlConnection.Open();
+            cmd.Connection = mySqlConnection;
+
+         
+            string stock = "";
+            using (SqlDataReader QueryReader = cmd.ExecuteReader())
+            {
+                if (QueryReader.HasRows)
+                {
+
+                
+                    MessageBox.Show(stock);
+                    runningOutofStock();
+                    mySqlConnection.Close();
+
+                }
+            }
+
+
+           
         }
+
     }
 }

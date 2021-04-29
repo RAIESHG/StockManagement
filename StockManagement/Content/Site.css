@@ -1,7 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+   
 }
 
 /* Wrapping element */
@@ -18,12 +17,23 @@ textarea {
     max-width: 280px;
 }
 
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background:black;
+    width:12%;
+}
+
+
+.sidenav a {
+        color:white;
+        padding:10px;
+    }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .jumbotron {
-        margin-top: 20px;
-    }
+    .jumbotron {    }
 
     .body-content {
         padding: 0;
