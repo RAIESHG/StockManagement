@@ -29,7 +29,6 @@ namespace StockManagement
                 SqlCommand cmd = new SqlCommand($"Insert into dbo.Category values('{catnametb.Text}','{categorydesctb.Text}')", mySqlConnection);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
-                throw new ArithmeticException("Access denied - You must be at least 18 years old.");
 
             }
             catch (Exception err)

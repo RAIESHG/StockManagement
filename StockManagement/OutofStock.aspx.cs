@@ -18,11 +18,36 @@ namespace StockManagement
         }
         public string getOutofStock()
         {
-            try { 
-            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+            try {
+                string query = "";
+                if (DropDownList1.SelectedValue == "namAsc")
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by ItemName";
+                }
+                else if(DropDownList1.SelectedValue == "namDesc")
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by ItemName DESC";
+                }
+                else if(DropDownList1.SelectedValue == "quaDesc")
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by quantity DESC";
+                }
+                else if(DropDownList1.SelectedValue == "quaAsc")
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by quantity";
+                }
+                else if(DropDownList1.SelectedValue == "latestStock")
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by StockPurchaseDate DESC";
+                }
+                else if(DropDownList1.SelectedValue == "oldestStock")
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by StockPurchaseDate";
+                }
+                string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand("Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity=0", mySqlConnection);
+            SqlCommand cmd = new SqlCommand(query, mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
 
@@ -61,5 +86,10 @@ namespace StockManagement
 
             }
 }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            getOutofStock();
+        }
     }
 }

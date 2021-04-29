@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="StockManagement.AddCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1  class="page-header">Item Portal                 </h1>
+    <h1  class="page-header">Add Category</h1>
     <div style="display: flex;">
         <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
             <tr>
