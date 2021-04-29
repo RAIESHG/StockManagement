@@ -32,4 +32,8 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Item]"></asp:SqlDataSource>
 
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" />
+    <script>
+
+        document.getElementsByClassName('sidenav')[0].style.display = 'none';
+    </script>
 </asp:Content>
