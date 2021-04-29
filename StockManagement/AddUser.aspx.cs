@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 
 namespace StockManagement
 {
@@ -26,7 +27,11 @@ namespace StockManagement
         {
             try
             {
-
+                if (!(new EmailAddressAttribute().IsValid(userNametb.Text)))
+                {
+                    throw new Exception("Incorrect Email Format");
+                }
+                    
 
                 string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
                 SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -36,6 +41,9 @@ namespace StockManagement
                 cmd.ExecuteNonQuery();
 
                 cmd.Dispose();
+
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('New User Added!');</script>");
+
 
             }
             catch (Exception err)

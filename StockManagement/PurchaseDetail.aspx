@@ -23,9 +23,9 @@
                 <tr>
             <td style="height: 39px; width: 436px;">
 
-                From:</td>
+                Start:</td>
             <td style="height: 39px">
-                To:</td>
+                End:</td>
 
         </tr>
         <tr>

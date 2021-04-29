@@ -43,7 +43,7 @@
 
             </td>
             <td>
-                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryName" DataValueField="CategoryNumber">
+                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CategoryName" DataValueField="CategoryNumber" Height="2em" Width="30em">
                  </asp:DropDownList>
             </td>
         </tr>

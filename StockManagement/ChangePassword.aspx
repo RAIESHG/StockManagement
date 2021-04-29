@@ -4,14 +4,14 @@
     <div style="display: flex;">
         <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
             <tr>
-                <td>Select User</td>
+                <td><asp:Label ID="Label1" runat="server" Text="Select User:" Height="2em" Width="30em"></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Username" DataValueField="Userid">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Username" DataValueField="Userid" Height="2em" Width="30em">
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td>New Password</td>
+                <td><asp:Label ID="Label4" runat="server" Text="New Password:" Height="2em" Width="30em"></asp:Label></td>
                 <td>
                     <asp:TextBox ID="repasswordtb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="repasswordtb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
@@ -19,8 +19,9 @@
                 </td>
             </tr>
             <tr>
-                <td>
-               <asp:Button ID="Button2" runat="server" OnClick="Button1_Click" Text="Change Password" />
+                <td colspan="2">
+               <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Change Password" CssClass="btn btn-primary" />
+
                     </td>
             </tr>
         </table>
