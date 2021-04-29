@@ -13,7 +13,13 @@ namespace StockManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["usertype"] != null)
+            {
+                if (Session["usertype"].ToString() != "admin")
+                {
+                    Response.Redirect("/");
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

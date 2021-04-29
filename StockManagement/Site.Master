@@ -46,20 +46,20 @@
       <a runat="server"  href="~/">
           <img src="images/logo.png" />RBSS</a>
                
-                         <a runat="server" href="~/AddMember" >AddMember</a>
-                     <a runat="server" href="~/AddItem" >AddItem</a>
-                          <a runat="server" href="~/AddStock" >Add Stock</a>
-                          <a runat="server" href="~/AddCategory" >Add Category</a>
-                          <a runat="server" href="~/ItemStock" >Item Stock</a>
-                       <a runat="server" href="~/Bill" >Generate Bill</a>
-                          <a runat="server" href="~/PurchaseDetail" >Purchase Detail</a>
-                     <a runat="server" href="~/OutofStock" >OutofStock Items</a>
-                        <a runat="server" href="~/RemoveStock" >Remove Stock</a>
-                        <a runat="server" href="~/UnsoldItems" >Unsold Items</a>
-                        <a runat="server" href="~/InactiveCustomers" >InActive Customers</a>    
-                        <a runat="server" href="~/ChangePassword" >Change Password</a>  
-                            <a runat="server" href="~/AddUser" >Add User</a>   
-                            <a runat="server" href="~/Login" >LogOut</a>   
+                         <a runat="server" class="user" href="~/AddMember" >AddMember</a>
+                     <a runat="server" class="user" href="~/AddItem" >AddItem</a>
+                          <a runat="server" class="user" href="~/AddStock" >Add Stock</a>
+                          <a runat="server" class="user" href="~/AddCategory" >Add Category</a>
+                          <a runat="server" class="user" href="~/ItemStock" >Item Stock</a>
+                       <a runat="server" class="user" href="~/Bill" >Generate Bill</a>
+                          <a runat="server" class="user" href="~/PurchaseDetail" >Purchase Detail</a>
+                     <a runat="server" class="user" href="~/OutofStock" >OutofStock Items</a>
+                        <a runat="server" class="user" href="~/RemoveStock" >Remove Stock</a>
+                        <a runat="server" class="user" href="~/UnsoldItems" >Unsold Items</a>
+                        <a runat="server" class="user" href="~/InactiveCustomers" >InActive Customers</a>    
+                        <a runat="server" class="admin" href="~/ChangePassword" >Change Password</a>  
+                            <a runat="server" class="admin" href="~/AddUser" >Add User</a>   
+                            <a runat="server" class="user" href="~/Login">LogOut</a>   
                       <br/>  <br/>  <br/> <br/>     <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> l
                      
                     
@@ -76,5 +76,23 @@
         </div>
                </div>
     </form>
+    <script>
+        
+        let email = '<%= Session["usertype"] %>';
+        console.log(email);
+        console.log(window.location.pathname);
+
+        
+       if (window.location.pathname != "/Login" && email == "") {
+            window.location = "Login.aspx";
+        }
+        if (email != 'admin') {
+            
+            for (let i = 0; i < 2; i++) {
+                document.getElementsByClassName('admin')[i].style.display = 'none';
+            }
+        }
+/*        document.getElementsByClassName('s')[0].style.display = 'none';
+*/    </script>
 </body>
 </html>

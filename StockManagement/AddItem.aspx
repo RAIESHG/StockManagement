@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddItem.aspx.cs" Inherits="StockManagement.AddItem" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
  
- <h1  class="page-header">                     Item Portal                 </h1>
+    <h1  class="page-header">                     Item Portal                 </h1>
      <div style="display: flex;">
     <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
         <tr>
