@@ -54,7 +54,10 @@
                      <a runat="server" href="~/OutofStock" >OutofStock Items</a>
                         <a runat="server" href="~/RemoveStock" >Remove Stock</a>
                         <a runat="server" href="~/UnsoldItems" >Unsold Items</a>
-                        <a runat="server" href="~/InactiveCustomers" >InActive Customers</a>                          
+                        <a runat="server" href="~/InactiveCustomers" >InActive Customers</a>    
+                        <a runat="server" href="~/ChangePassword" >Change Password</a>  
+                            <a runat="server" href="~/Login" >LogOut</a>   
+                    
             </div>
       
         
