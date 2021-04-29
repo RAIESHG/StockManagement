@@ -42,9 +42,8 @@ namespace StockManagement
                     while (QueryReader.Read())
                     {
                         int itemCode = QueryReader.GetInt32(1);
-                         Quantity = QueryReader.GetInt32(2);
-                        DateTime dateTime = QueryReader.GetDateTime(3);
-                        string StockPurchaseDate = dateTime.ToString("d", new CultureInfo("en-US"));
+                        Quantity = QueryReader.GetInt32(2);
+                        string StockPurchaseDate = QueryReader.GetDateTime(3).ToString("d");
                         /*string StockPurchaseDate = QueryReader.GetString(3);*/
                         string status = "";
                         if (Quantity < 10 && Quantity >0)
