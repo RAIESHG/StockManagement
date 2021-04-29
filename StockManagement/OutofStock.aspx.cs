@@ -18,7 +18,7 @@ namespace StockManagement
         }
         public string getOutofStock()
         {
-         
+            try { 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -51,5 +51,15 @@ namespace StockManagement
                 return data;
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+
+
+            }
+}
     }
 }

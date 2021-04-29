@@ -24,6 +24,7 @@ namespace StockManagement
         }
         public string getStockData()
         {
+            try { 
             string dropdown = DropDownList1.SelectedValue.ToString();
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             int Quantity = 0;
@@ -70,6 +71,17 @@ namespace StockManagement
                 return data;
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+
+
+            }
+
+}
     }
 
 }

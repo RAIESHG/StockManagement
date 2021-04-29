@@ -18,24 +18,36 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+            try
+            {
 
-            SqlConnection mySqlConnection = new SqlConnection(connectionstring);
+                string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
-            mySqlConnection.Open();
-            SqlCommand cmd = new SqlCommand($"Insert into dbo.Category values('{catnametb.Text}','{categorydesctb.Text}')", mySqlConnection);
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+                SqlConnection mySqlConnection = new SqlConnection(connectionstring);
 
-            
+                mySqlConnection.Open();
+                SqlCommand cmd = new SqlCommand($"Insert into dbo.Category values('{catnametb.Text}','{categorydesctb.Text}')", mySqlConnection);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                throw new ArithmeticException("Access denied - You must be at least 18 years old.");
 
-                /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
-                         cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
-                         cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
-                         cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
+            }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+                string convertedMessage = rawMessage.Replace("'", "");
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+            }
 
 
-            }         
+
+            /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
+                     cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
+                     cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
+                     cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
+
+
+        }         
            
         }
 

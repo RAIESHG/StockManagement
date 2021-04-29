@@ -17,6 +17,7 @@ namespace StockManagement
         }
         public string getstockforremoval()
         {
+            try { 
             List<int> itemlist = new List<int>(); 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             string dateForButton = DateTime.Now.AddDays(-100).ToString("d");
@@ -56,6 +57,16 @@ namespace StockManagement
                 return data;
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+
+
+            }
+}
 
         protected void Button2_Click(object sender, EventArgs e)
         {

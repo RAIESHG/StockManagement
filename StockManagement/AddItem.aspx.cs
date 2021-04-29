@@ -18,6 +18,7 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try { 
 
             int categoryid = int.Parse(DropDownList1.SelectedValue.ToString());
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
@@ -68,9 +69,16 @@ namespace StockManagement
             insertcommand.ExecuteNonQuery();
 
             insertcommand.Dispose();
-
-
-
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+            }
+
+
+
+}
     }
 }

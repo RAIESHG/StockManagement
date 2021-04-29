@@ -24,6 +24,7 @@ namespace StockManagement
         int quantity = 0;
         public string getbill()
         {
+            try { 
             string dropdown = DropDownList1.SelectedValue.ToString();
 
 
@@ -61,9 +62,18 @@ namespace StockManagement
                 return data;
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+            }
+}
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            try { 
             string member = DropDownList2.SelectedValue.ToString();
 
             string itemname = DropDownList1.SelectedValue.ToString();
@@ -126,8 +136,17 @@ namespace StockManagement
 
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+              
+            }
+}
         public int checkstock(String item)
         {
+            try{
             string dropdown = DropDownList1.SelectedValue.ToString();
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             int Quantity = 0;
@@ -158,6 +177,15 @@ namespace StockManagement
                 }
                 return Quantity;
             }
-        } 
+        }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return 0;
+
+            }
+} 
     }
 }

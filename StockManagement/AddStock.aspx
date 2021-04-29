@@ -11,6 +11,8 @@
             </td>
             <td>
                 <asp:TextBox ID="quantitytb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
 
         </tr>

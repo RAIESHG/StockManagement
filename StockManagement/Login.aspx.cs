@@ -18,7 +18,7 @@ namespace StockManagement
         }
         public string runningOutofStock()
         {
-
+            try { 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -46,9 +46,20 @@ namespace StockManagement
 
             } return data;
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+
+
+            }
+}
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try { 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -70,10 +81,19 @@ namespace StockManagement
 
                 }
             }
-
-
-           
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+             
+
+            }
+
+
+
+}
 
     }
 }

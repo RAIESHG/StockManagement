@@ -10,6 +10,8 @@
             </td>
             <td>
                 <asp:TextBox ID="itemnametb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="itemnametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
             
         </tr>
@@ -19,6 +21,8 @@
             </td>
             <td>
                 <asp:TextBox ID="descriptiontb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Field is required!" ControlToValidate="descriptiontb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
 
             </td>
 
@@ -29,6 +33,8 @@
             </td>
             <td>
                 <asp:TextBox ID="pricetb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Field is required!" ControlToValidate="pricetb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
         </tr>
         <tr>
@@ -48,6 +54,8 @@
             </td>
             <td>
                  <asp:TextBox ID="quantitytb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
         </tr>
         <tr>

@@ -18,7 +18,7 @@ namespace StockManagement
 
         public string inactiveMembers() 
         {
-
+            try { 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             string dateForButton = DateTime.Now.AddDays(-31).ToString("d");
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -59,5 +59,15 @@ namespace StockManagement
                 return data;
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+
+
+            }
+}
     }
 }

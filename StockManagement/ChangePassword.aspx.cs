@@ -18,6 +18,7 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try { 
             int dropdown = int.Parse(DropDownList1.SelectedValue.ToString());
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -27,11 +28,19 @@ namespace StockManagement
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             mySqlConnection.Close();
-
-
-        
-               
+        }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+              
             }
+
+
+
+
+}
         }
     
 }

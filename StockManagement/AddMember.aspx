@@ -10,7 +10,11 @@
                 <asp:Label ID="Label1" runat="server" Text="Member Name" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="membernametb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                 <asp:TextBox ID="membernametb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Field is required!" ControlToValidate="membernametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
+                
+                
             </td>
             
         </tr>
@@ -19,7 +23,9 @@
                 <asp:Label ID="Label4" runat="server" Text="Address" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="addresstb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                 <asp:TextBox ID="addresstb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="addresstb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
 
             </td>
 
@@ -30,6 +36,8 @@
             </td>
             <td>
                 <asp:TextBox ID="contactnumbertb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Field is required!" ControlToValidate="contactnumbertb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
         </tr>
         <tr>
@@ -39,6 +47,8 @@
             </td>
             <td>
                 <asp:TextBox ID="emailtb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Field is required!" ControlToValidate="emailtb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
         </tr>
         <tr>
@@ -48,6 +58,8 @@
             </td>
             <td>
                 <asp:TextBox ID="membertypetb" runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Field is required!" ControlToValidate="membertypetb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
         </tr>
         <tr>

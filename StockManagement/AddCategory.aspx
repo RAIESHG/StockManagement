@@ -9,6 +9,8 @@
                 </td>
                 <td>
                     <asp:TextBox ID="catnametb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Field is required!" ControlToValidate="catnametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
                 </td>
             </tr>
               <tr>
@@ -17,6 +19,8 @@
                 </td>
                 <td>
                     <asp:TextBox ID="categorydesctb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="categorydesctb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
                 </td>
             </tr>
             <tr>

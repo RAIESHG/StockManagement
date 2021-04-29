@@ -18,6 +18,7 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try { 
             string itemcode = DropDownList1.SelectedValue.ToString();
 
         
@@ -67,5 +68,12 @@ namespace StockManagement
             commandd.Dispose();
             mySqlConnection.Close();
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+            }
+}
     }
 }
