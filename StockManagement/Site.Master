@@ -60,7 +60,9 @@
                         <a runat="server" class="admin" href="~/ChangePassword" >Change Password</a>  
                             <a runat="server" class="admin" href="~/AddUser" >Add User</a>   
                             <a runat="server" class="user" href="~/Login">LogOut</a>   
-                      <br/>  <br/>  <br/> <br/>     <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> l
+                             <a runat="server" class="user" href="~/UserChangePassword">Change My Password</a>   
+
+                      <br/>  <br/>  <br/> <br/>     <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> 
                      
                     
             </div>
