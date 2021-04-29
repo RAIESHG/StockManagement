@@ -19,14 +19,14 @@ namespace StockManagement
         {
             List<int> itemlist = new List<int>(); 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-
+            string dateForButton = DateTime.Now.AddDays(-100).ToString("d");
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
             SqlCommand cmd = new SqlCommand($@"Select * from dbo.Item Join dbo.Stock on dbo.Stock.ItemCode=dbo.Item.ItemCode Join dbo.CustomerPurchase on dbo.CustomerPurchase.ItemCode=dbo.Item.ItemCode where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
             Join dbo.CustomerPurchase on dbo.Item.ItemCode = dbo.CustomerPurchase.ItemCode)
             EXCEPT
             (Select dbo.Item.ItemCode MemberNumber from dbo.Item
             Join dbo.CustomerPurchase on dbo.Item.ItemCode = dbo.CustomerPurchase.ItemCode
-            where dbo.CustomerPurchase.BillingDate >= '2021-03-28')); ", mySqlConnection);
+            where dbo.CustomerPurchase.BillingDate >= '{dateForButton}')); ", mySqlConnection);
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
 

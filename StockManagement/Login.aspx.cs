@@ -56,7 +56,7 @@ namespace StockManagement
             mySqlConnection.Open();
             cmd.Connection = mySqlConnection;
 
-            string data = "";
+         
             string stock = "";
             using (SqlDataReader QueryReader = cmd.ExecuteReader())
             {

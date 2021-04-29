@@ -18,10 +18,11 @@ namespace StockManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            int dropdown = int.Parse(DropDownList1.SelectedValue.ToString());
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
             mySqlConnection.Open();
-            SqlCommand cmd = new SqlCommand($"Update dbo.Users set Password='{passwordtb.Text}' where Username='raieshg'", mySqlConnection);
+            SqlCommand cmd = new SqlCommand($"Update dbo.Users set Password='{repasswordtb.Text}' where Userid={dropdown}", mySqlConnection);
             cmd.Connection = mySqlConnection;
             cmd.ExecuteNonQuery();
             cmd.Dispose();
