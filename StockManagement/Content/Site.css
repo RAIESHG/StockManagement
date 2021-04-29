@@ -21,8 +21,8 @@ textarea {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background:black;
-    width:12%;
+    background: #638fe6;
+    width: 12%;
 }
 
 
