@@ -11,6 +11,7 @@ namespace StockManagement
 {
     public partial class RemoveStock : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,17 +19,18 @@ namespace StockManagement
         public string getstockforremoval()
         {
             try { 
-            List<int> itemlist = new List<int>(); 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
             string dateForButton = DateTime.Now.AddDays(-100).ToString("d");
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand($@"Select * from dbo.Item Join dbo.Stock on dbo.Stock.ItemCode=dbo.Item.ItemCode Join dbo.CustomerPurchase on dbo.CustomerPurchase.ItemCode=dbo.Item.ItemCode where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
-            Join dbo.CustomerPurchase on dbo.Item.ItemCode = dbo.CustomerPurchase.ItemCode)
+            SqlCommand cmd = new SqlCommand($@"Select * from dbo.Item Join dbo.Stock on dbo.Stock.ItemCode=dbo.Item.ItemCode  
+where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
+            Join dbo.Stock on dbo.Item.ItemCode = dbo.Stock.ItemCode)
             EXCEPT
-            (Select dbo.Item.ItemCode MemberNumber from dbo.Item
-            Join dbo.CustomerPurchase on dbo.Item.ItemCode = dbo.CustomerPurchase.ItemCode
-            where dbo.CustomerPurchase.BillingDate >= '{dateForButton}')); ", mySqlConnection);
+            (Select dbo.Item.ItemCode from dbo.Item
+            Join dbo.Stock on dbo.Item.ItemCode = dbo.Stock.ItemCode
+            where dbo.Stock.StockPurchaseDate >= '{dateForButton}')) ", mySqlConnection);
             mySqlConnection.Open();
+
             cmd.Connection = mySqlConnection;
 
             string data = "";
@@ -41,15 +43,15 @@ namespace StockManagement
                     while (QueryReader.Read())
                     {
                         int itemCode = QueryReader.GetInt32(0);
-                        itemlist.Add(itemCode);
                         string itemname = QueryReader.GetString(1);
                         int Quantity = QueryReader.GetInt32(7);
-                        string lastpurchasedon = QueryReader.GetDateTime(12).ToString("d");
+                        string lastpurchasedon = QueryReader.GetDateTime(8).ToString("d");
 
 
-
-
-                        data += "<tr><td> " + itemCode + "</td><td> " + itemname + "</td><td> " + Quantity + "</td><td> " + lastpurchasedon + "</td><tr> ";
+                            if (Quantity > 0)
+                            {
+                                data += "<tr><td> " + itemCode + "</td><td> " + itemname + "</td><td> " + Quantity + "</td><td> " + lastpurchasedon + "</td><tr> ";
+                            }
                     }
                     mySqlConnection.Close();
 
@@ -70,9 +72,59 @@ namespace StockManagement
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            List<int> itemlist = new List<int>();
+
+
+            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+                string dateForButton = DateTime.Now.AddDays(-100).ToString("d");
+                SqlConnection mySqlConnection = new SqlConnection(connectionstring);
+                SqlCommand cmd = new SqlCommand($@"Select * from dbo.Item Join dbo.Stock on dbo.Stock.ItemCode=dbo.Item.ItemCode  
+                where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
+                Join dbo.Stock on dbo.Item.ItemCode = dbo.Stock.ItemCode)
+                EXCEPT
+                (Select dbo.Item.ItemCode from dbo.Item
+                Join dbo.Stock on dbo.Item.ItemCode = dbo.Stock.ItemCode
+                where dbo.Stock.StockPurchaseDate >= '{dateForButton}')) ", mySqlConnection);
+                mySqlConnection.Open();
+
+                cmd.Connection = mySqlConnection;
+
+       
+
+                using (SqlDataReader QueryReader = cmd.ExecuteReader())
+                {
+                    if (QueryReader.HasRows)
+                    {
+
+                        while (QueryReader.Read())
+                        {
+                            int itemCode = QueryReader.GetInt32(0);
+                        
+                            itemlist.Add(itemCode);
+
+
+
+                        }
+
+                    }
+                 
+                }
+            
+         
+             
+
+
+            
+            for (int i = 0; i < itemlist.Count; i++)
+            {
+                SqlCommand commandd = new SqlCommand($"Update dbo.Stock set Quantity=0 where ItemCode={itemlist[i]} ", mySqlConnection);
+                commandd.ExecuteNonQuery();
+                commandd.Dispose();
+            }
+            mySqlConnection.Close();
 
         }
 
-       
+
     }
 }
