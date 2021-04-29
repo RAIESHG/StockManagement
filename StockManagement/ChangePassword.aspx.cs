@@ -19,7 +19,6 @@ namespace StockManagement
         protected void Button1_Click(object sender, EventArgs e)
         {
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-            int Quantity = 0;
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
             mySqlConnection.Open();
             SqlCommand cmd = new SqlCommand($"Update dbo.Users set Password='{passwordtb.Text}' where Username='raieshg'", mySqlConnection);
