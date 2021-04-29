@@ -70,7 +70,7 @@
 
         <tr>
                         <td colspan="2" class="text-right">
-                             <asp:CheckBox ID="CheckBox1" runat="server" Checked="True" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Ignore calendar and view details of last 31 days." />
+                             <asp:CheckBox ID="CheckBox1" runat="server" Checked="True" Text="Ignore calendar and view details of last 31 days." />
 
                         </td>
         </tr>

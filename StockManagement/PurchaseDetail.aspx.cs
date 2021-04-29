@@ -33,6 +33,7 @@ namespace StockManagement
 
         public string prevPurchaseDetails()
         {
+            try { 
             string dropdown = DropDownList1.SelectedValue.ToString();
 
             string fromDate = Calendar1.SelectedDate.ToString("d");
@@ -81,6 +82,16 @@ namespace StockManagement
                 return data;
             }
         }
+            catch (Exception err)
+            {
+                string rawMessage = err.Message;
+        string convertedMessage = rawMessage.Replace("'", "");
+        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                return "invalid";
+
+
+            }
+}
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
