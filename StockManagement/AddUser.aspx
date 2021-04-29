@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddUser.aspx.cs" Inherits="StockManagement.AddUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
    
-  <h1  class="page-header">                     Add User Portal                 </h1>
+    <h1  class="page-header">                     Add User Portal                 </h1>
 
        <div style="display: flex;">
 <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >

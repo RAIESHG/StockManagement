@@ -14,6 +14,7 @@ namespace StockManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["usertype"] = "";
 
         }
         public string runningOutofStock()
@@ -49,8 +50,8 @@ namespace StockManagement
             catch (Exception err)
             {
                 string rawMessage = err.Message;
-        string convertedMessage = rawMessage.Replace("'", "");
-        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                string convertedMessage = rawMessage.Replace("'", "");
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
                 return "invalid";
 
 
@@ -73,14 +74,20 @@ namespace StockManagement
             {
                 if (QueryReader.HasRows)
                 {
-
+                Session["usertype"] = usernametb.Text;
+                Response.Redirect("AddItem.aspx");
                 
-                    MessageBox.Show(stock);
+                    /*MessageBox.Show(stock);
                     runningOutofStock();
-                    mySqlConnection.Close();
+                    mySqlConnection.Close();*/
 
                 }
-            }
+                    else
+                    {
+                        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Incorrect Credentials');</script>");
+
+                    }
+                }
         }
             catch (Exception err)
             {
