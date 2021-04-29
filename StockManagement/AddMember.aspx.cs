@@ -22,7 +22,7 @@ namespace StockManagement
                 SqlConnection mySqlConnection = new SqlConnection(connectionstring);
                 mySqlConnection.Open();
                 
-                SqlCommand cmd = new SqlCommand($"Insert into dbo.Member values('{membernametb.Text}','{addresstb.Text}','{contactnumbertb.Text}','{emailtb.Text}','{membertypetb.Text}')", mySqlConnection);
+                SqlCommand cmd = new SqlCommand($"Insert into dbo.Member values('{membernametb.Text}','{addresstb.Text}','{contactnumbertb.Text}','{emailtb.Text}','{DropDownList1.SelectedValue}')", mySqlConnection);
                 cmd.ExecuteNonQuery();
                 
                 cmd.Dispose();

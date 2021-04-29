@@ -59,8 +59,8 @@ namespace StockManagement
             catch (Exception err)
             {
                 string rawMessage = err.Message;
-        string convertedMessage = rawMessage.Replace("'", "");
-        ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                string convertedMessage = rawMessage.Replace("'", "");
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
               
             }
 

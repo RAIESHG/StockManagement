@@ -57,8 +57,14 @@
                 <asp:Label ID="Label7" runat="server" Text="Member Type" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="membertypetb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Field is required!" ControlToValidate="membertypetb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="415px">
+                    
+                    <asp:ListItem Enabled="true" Text="Exclusive" Value="Exclusive"></asp:ListItem>
+                    <asp:ListItem Text="Platinum" Value="Platinum"></asp:ListItem>
+                    <asp:ListItem Text="Gold" Value="Gold"></asp:ListItem>
+                    <asp:ListItem Text="Silver" Value="Silver"></asp:ListItem>
+
+                </asp:DropDownList>
                
             </td>
         </tr>

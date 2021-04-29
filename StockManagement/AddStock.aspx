@@ -7,17 +7,6 @@
     <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Quantity" Height="2em" Width="30em"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="quantitytb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
-               
-            </td>
-
-        </tr>
-        <tr>
-            <td>
 
                 <asp:Label ID="Label4" runat="server" Text="Item Name" Height="2em" Width="30em"></asp:Label>
             </td>
@@ -25,6 +14,18 @@
                      <asp:DropDownList ID="DropDownList1" Height="2em" Width="30em" runat="server" DataSourceID="SqlDataSource1" DataTextField="ItemName" DataValueField="ItemCode">
 </asp:DropDownList>
 
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+
+                <asp:Label ID="Label1" runat="server" Text="Quantity" Height="2em" Width="30em"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="quantitytb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+               
             </td>
 
         </tr>
