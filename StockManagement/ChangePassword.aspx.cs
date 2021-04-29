@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -34,7 +36,26 @@ namespace StockManagement
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             mySqlConnection.Close();
-        }
+
+
+                System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("stockmanagementbot@gmail.com");
+                message.To.Add(new MailAddress(DropDownList1.SelectedItem.Text));
+                message.Subject = "New Password";
+                message.IsBodyHtml = false; //to make message body as html
+                message.Body = "Your password is: " + repasswordtb.Text;
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com"; //for gmail host
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("stockmanagementbot@gmail.com", "stockmanagementbot123");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Email has been sent!');</script>");
+
+            }
             catch (Exception err)
             {
                 string rawMessage = err.Message;
