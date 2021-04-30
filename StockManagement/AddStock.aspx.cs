@@ -67,7 +67,9 @@ namespace StockManagement
             commandd.ExecuteNonQuery();
             commandd.Dispose();
             mySqlConnection.Close();
-        }
+            ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Values Updated');</script>");
+
+            }
             catch (Exception err)
             {
                 string rawMessage = err.Message;

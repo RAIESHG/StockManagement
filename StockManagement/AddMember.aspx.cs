@@ -26,7 +26,8 @@ namespace StockManagement
                 cmd.ExecuteNonQuery();
                 
                 cmd.Dispose();
-             
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Values Updated');</script>");
+
             }
             catch (Exception err)
             {

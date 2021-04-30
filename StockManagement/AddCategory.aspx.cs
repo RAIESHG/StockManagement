@@ -29,6 +29,7 @@ namespace StockManagement
                 SqlCommand cmd = new SqlCommand($"Insert into dbo.Category values('{catnametb.Text}','{categorydesctb.Text}')", mySqlConnection);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Values Updated');</script>");
 
             }
             catch (Exception err)

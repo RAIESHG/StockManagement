@@ -62,18 +62,7 @@ namespace StockManagement
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void btnSavePDF_Click(object sender, EventArgs e)
-        {
-           
-                  
 
-            
-
-            }
 
         }
    
