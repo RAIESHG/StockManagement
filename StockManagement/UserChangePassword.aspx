@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserChangePassword.aspx.cs" Inherits="StockManagement.UserChangePassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1  class="page-header">Change Password</h1>
+    <p  class="page-header">Change your password!</p>
     <div style="display: flex;">
         <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
             <tr>

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
    
     <h1  class="page-header">                     Customer Database Portal                 </h1>
+    <p  class="page-header">                     This page allows users to add the members edit some of their details.</p>
 
        <div style="display: flex;">
 <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
@@ -80,16 +81,27 @@
 
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Member]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="MemberNumber" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True">
+    <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="MemberNumber" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="MemberNumber" HeaderText="MemberNumber" InsertVisible="False" ReadOnly="True" SortExpression="MemberNumber" />
             <asp:BoundField DataField="MemberName" HeaderText="MemberName" SortExpression="MemberName" />
             <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
             <asp:BoundField DataField="ContactNumber" HeaderText="ContactNumber" SortExpression="ContactNumber" />
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             <asp:BoundField DataField="MemberType" HeaderText="MemberType" SortExpression="MemberType" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
         </Columns>
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Member] WHERE [MemberNumber] = @MemberNumber" InsertCommand="INSERT INTO [Member] ([MemberName], [Address], [ContactNumber], [Email], [MemberType]) VALUES (@MemberName, @Address, @ContactNumber, @Email, @MemberType)" SelectCommand="SELECT * FROM [Member]" UpdateCommand="UPDATE [Member] SET [MemberName] = @MemberName, [Address] = @Address, [ContactNumber] = @ContactNumber, [Email] = @Email, [MemberType] = @MemberType WHERE [MemberNumber] = @MemberNumber">
         <DeleteParameters>

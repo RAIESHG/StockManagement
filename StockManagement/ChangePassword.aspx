@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="StockManagement.Change_Password" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1  class="page-header">Change Password</h1>
+    <p  class="page-header">This page allows admins to change user&#39;s password and sends a email notifying the users.</p>
     <div style="display: flex;">
         <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
             <tr>

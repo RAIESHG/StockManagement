@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
           <h1  class="page-header">In-Active Customers</h1>
+          <p  class="page-header">This page lists all the registered members that haven&#39;t purchased anything in the last 31 days.</p>
 
      <div class="table-responsive">
      <table class="table" >

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UnsoldItems.aspx.cs" Inherits="StockManagement.UnsoldItems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
               <h1  class="page-header">UnSold Stocks</h1>
+              <p  class="page-header">This page shows items that are on stock and not sold in the last 31 days.</p>
 
      <div class="table-responsive">
      <table class="table" >

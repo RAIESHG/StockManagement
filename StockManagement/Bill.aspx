@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Bill.aspx.cs" Inherits="StockManagement.Bill" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">              <h1  class="page-header">                     Sales Portal                 </h1>
+    <p  class="page-header">                     This page allows users to check the total prices and generate the bill after a purchase is made. The database will also be updated after the bill is generated.</p>
 
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Item]"></asp:SqlDataSource>

@@ -44,6 +44,10 @@ namespace StockManagement
                 {
                     query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity<10 order by StockPurchaseDate";
                 }
+                if (CheckBox1.Checked)
+                {
+                    query = $"Select * from dbo.Stock s join dbo.Item i on i.ItemCode=s.ItemCode where s.Quantity>0";
+                }
                 string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
 
             SqlConnection mySqlConnection = new SqlConnection(connectionstring);
@@ -91,5 +95,7 @@ namespace StockManagement
         {
             getOutofStock();
         }
+
+        
     }
 }

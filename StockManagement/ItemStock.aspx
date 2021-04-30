@@ -3,6 +3,7 @@
 
 
      <h1  class="page-header">Check Stock Status</h1>
+     <p  class="page-header">This page allows users to check stock status of all the products individually. </p>
 
     <div style="display: flex;">
     <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >

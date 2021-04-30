@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
      <h1  class="page-header">Check Stock Status</h1>
+     <p  class="page-header">The table displays the products that are running low on quantity (less than 10). Users can sort through the data. Users can also see all the items on stock. </p>
 
     <div style="display: flex;">
     <table style="margin-left: auto;  margin-right: auto;width:500px;" class="table" >
@@ -21,16 +22,24 @@
                     <asp:ListItem Text="Quantity Ascending" Value="quaAsc"></asp:ListItem>
                     <asp:ListItem Text="Latest Stock Date" Value="latestStock"></asp:ListItem>
                     <asp:ListItem Text="Oldest Stock Date" Value="oldestStock"></asp:ListItem>
-
                  </asp:DropDownList>
 
             </td>
 
         </tr>
 
-        <tr>
+
+   <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button2" runat="server" OnClick="Button1_Click" Text="Sort" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Search" CssClass="btn btn-primary" />
+                        </td>
+        </tr>
+        
+        <tr>
+                        <td colspan="2" class="text-right">
+
+                        <asp:CheckBox ID="CheckBox1" runat="server" Checked="False" Text="Ignore dropdown and see all the items on stock."/>
+
                         </td>
         </tr>
     </table>
@@ -42,9 +51,10 @@
             <td style="color:white;"> ItemCode </td>
             <td style="color:white;"> Item Name </td>
             <td style="color:white;"> Quantity </td>
-            <td style="color:white;">Last Stock Purchase Date</td> 
+            <td style="color:white;">Last Purchase Date</td> 
 
         </tr>
+
 
         <%=getOutofStock()%>
 
