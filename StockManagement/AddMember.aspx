@@ -80,8 +80,9 @@
 
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Member]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="MemberNumber" DataSourceID="SqlDataSource2">
+    <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="MemberNumber" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True">
         <Columns>
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="MemberNumber" HeaderText="MemberNumber" InsertVisible="False" ReadOnly="True" SortExpression="MemberNumber" />
             <asp:BoundField DataField="MemberName" HeaderText="MemberName" SortExpression="MemberName" />
             <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />

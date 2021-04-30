@@ -26,7 +26,7 @@
             <tr>
                         <td colspan="2">
                             <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
-                            <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="CategoryNumber" DataSourceID="SqlDataSource1">
+                            <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="CategoryNumber" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True">
                                 <Columns>
                                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                                     <asp:BoundField DataField="CategoryNumber" HeaderText="CategoryNumber" InsertVisible="False" ReadOnly="True" SortExpression="CategoryNumber" />

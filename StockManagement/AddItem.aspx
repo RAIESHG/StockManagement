@@ -62,7 +62,7 @@
                         <td colspan="2">
                             <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
-                            <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="ItemCode" DataSourceID="SqlDataSource2">
+                            <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="ItemCode" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True">
                                 <Columns>
                                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                                     <asp:BoundField DataField="ItemCode" HeaderText="ItemCode" InsertVisible="False" ReadOnly="True" SortExpression="ItemCode" />
