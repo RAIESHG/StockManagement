@@ -11,7 +11,7 @@ namespace StockManagement
 {
     public partial class PurchaseDetail : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)        //load on page load
         {
             if (!IsPostBack)
             {
@@ -23,15 +23,14 @@ namespace StockManagement
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)        
         {
             
             prevPurchaseDetails();
-            /*ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);*/
 
         }
 
-        public string prevPurchaseDetails()
+        public string prevPurchaseDetails()     //see all the details of users
         {
             try { 
             string dropdown = DropDownList1.SelectedValue.ToString();
@@ -93,7 +92,7 @@ namespace StockManagement
             }
 }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e) //display calendar
         {
             if (Calendar1.Visible)
             {
@@ -105,7 +104,7 @@ namespace StockManagement
             }
             Calendar1.Attributes.Add("style", "position:absolute");
         }
-        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)//display calendar
         {
             if (Calendar2.Visible)
             {
@@ -118,12 +117,12 @@ namespace StockManagement
             Calendar2.Attributes.Add("style", "position:absolute");
         }
 
-        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)   //toggle calendar
         {
             TextBox1.Text = Calendar1.SelectedDate.ToString("d");
             Calendar1.Visible = false;
         }
-        protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+        protected void Calendar2_SelectionChanged(object sender, EventArgs e)   //toggle calendar
         {
             TextBox2.Text = Calendar2.SelectedDate.ToString("d");
             Calendar2.Visible = false;

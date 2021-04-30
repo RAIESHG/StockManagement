@@ -16,7 +16,9 @@ namespace StockManagement
 
         }
 
-        public string unsolditems()
+        public string unsolditems()     //Retrieves current date and check for stock which are not sold for more than 31days and displays it in a table.
+
+
         {
             try { 
 

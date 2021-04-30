@@ -16,12 +16,14 @@ namespace StockManagement
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)    // The category data inserted in the textfield is retrieved and added to the category database table.
+
+
         {
             try
             {
 
-                string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+                string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString; 
 
                 SqlConnection mySqlConnection = new SqlConnection(connectionstring);
 
@@ -29,22 +31,17 @@ namespace StockManagement
                 SqlCommand cmd = new SqlCommand($"Insert into dbo.Category values('{catnametb.Text}','{categorydesctb.Text}')", mySqlConnection);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
-                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Values Updated');</script>");
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Values Updated');</script>");//show values updated alert
 
             }
             catch (Exception err)
             {
                 string rawMessage = err.Message;
                 string convertedMessage = rawMessage.Replace("'", "");
-                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
+                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>"); //show error alert
             }
 
 
-
-            /*         cmd.Parameters.AddWithValue("@ItemCode", $"{itemname}");
-                     cmd.Parameters.AddWithValue("@MemberNumber", $"{member}");
-                     cmd.Parameters.AddWithValue("@BillingDate", "2021-05-04");
-                     cmd.Parameters.AddWithValue("@Quantity", $"{quantity}");*/
 
 
         }         

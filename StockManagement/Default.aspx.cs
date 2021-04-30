@@ -23,7 +23,7 @@ namespace StockManagement
                 Session["counter"] = 1;
             }
         }
-        protected string LowStock()
+        protected string LowStock()     //check if low stock, if yes, show modal alert
         {
             string query = "";
             query = $"Select* from dbo.Stock s join dbo.Item i on i.ItemCode = s.ItemCode where s.Quantity < 10";

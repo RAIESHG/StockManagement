@@ -16,7 +16,7 @@ namespace StockManagement
         {
 
         }
-        public string getstockforremoval()
+        public string getstockforremoval()      //see items are are not stocked in the last 100 days.
         {
             try { 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
@@ -70,7 +70,7 @@ where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
             }
 }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)        //onbuttonclick execute query
         {
             List<int> itemlist = new List<int>();
 

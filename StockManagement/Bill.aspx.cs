@@ -26,12 +26,12 @@ namespace StockManagement
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)        //check button clicked
         {
             getbill();
         }
         int quantity = 0;
-        public string getbill()
+        public string getbill()     //get entered details and process into table
         {
             try { 
             string dropdown = DropDownList1.SelectedValue.ToString();
@@ -80,7 +80,7 @@ namespace StockManagement
             }
 }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)        //Update database and call to generate pdf
         {
             try { 
             string member = DropDownList2.SelectedValue.ToString();
@@ -159,7 +159,7 @@ namespace StockManagement
             }
 }
 
-        public void BillGenerator(string membernumber, string itemname, string category, int quantity, int unitprice, int price)
+        public void BillGenerator(string membernumber, string itemname, string category, int quantity, int unitprice, int price)        //generate pdf
         {
             using (StringWriter sw = new StringWriter())
             {
@@ -210,7 +210,7 @@ namespace StockManagement
         }
 
 
-        public string getBills()
+        public string getBills()        //update bottom table and call generate pdf
         {
             try
             {

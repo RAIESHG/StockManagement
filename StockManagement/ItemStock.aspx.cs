@@ -18,11 +18,11 @@ namespace StockManagement
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)    //trigger function onlcick
         {
             getStockData();
         }
-        public string getStockData()
+        public string getStockData()        //get items along with stock status
         {
             try { 
             string dropdown = DropDownList1.SelectedValue.ToString();

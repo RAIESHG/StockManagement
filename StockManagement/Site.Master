@@ -41,10 +41,10 @@
         </asp:ScriptManager>
           <div style="display:flex;">
 
-                <div class="sidenav">
+                <div class="sidenav"><!--navbar -->
                     
       <a runat="server"  href="~/">
-          <img src="images/logo.png" />RBSS</a>
+          <img src="images/logo.png" />RBSS</a> <!--navbar items -->
                
                          <a runat="server" class="user" href="~/AddMember" >Add Member</a>
                      <a runat="server" class="user" href="~/AddItem" >Add Item</a>
@@ -81,7 +81,7 @@
     </form>
     <script>
         
-        let email = '<%= Session["usertype"] %>';
+        let email = '<%= Session["usertype"] %>';   //session control
         console.log(email);
         console.log(window.location.pathname);
 
@@ -89,7 +89,7 @@
        if (window.location.pathname != "/Login" && email == "") {
             window.location = "Login.aspx";
         }
-        if (email != 'admin') {
+        if (email != 'admin') { //if admin logged in, show extra nav bar items
             
             for (let i = 0; i < 2; i++) {
                 document.getElementsByClassName('admin')[i].style.display = 'none';

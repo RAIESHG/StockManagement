@@ -16,7 +16,7 @@ namespace StockManagement
       
 
         }
-        public string getOutofStock()
+        public string getOutofStock()       //get items and sort.. if quantity less than 10
         {
             try {
                 string query = "";
@@ -91,7 +91,7 @@ namespace StockManagement
             }
 }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)        //trigger function onclick
         {
             getOutofStock();
         }
