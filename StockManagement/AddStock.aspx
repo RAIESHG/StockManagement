@@ -37,7 +37,7 @@
         </tr>
     </table>
            </div>
-      <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="StockId" DataSourceID="SqlDataSource2">
+      <asp:GridView ID="GridView1" runat="server" AllowPaging="True" class="table" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="StockId" DataSourceID="SqlDataSource2">
           <Columns>
               <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
               <asp:BoundField DataField="StockId" HeaderText="StockId" InsertVisible="False" ReadOnly="True" SortExpression="StockId" />

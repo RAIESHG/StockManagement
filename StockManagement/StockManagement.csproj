@@ -256,7 +256,6 @@
     <Compile Include="ItemStock.aspx.designer.cs">
       <DependentUpon>ItemStock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="iTextSharp\text.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="iTextSharp\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
