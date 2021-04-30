@@ -57,7 +57,7 @@
                 <asp:Label ID="Label7" runat="server" Text="Member Type" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="415px">
+                <asp:DropDownList ID="DropDownList1" runat="server" Height="2em" Width="30em">
                     
                     <asp:ListItem Enabled="true" Text="Exclusive" Value="Exclusive"></asp:ListItem>
                     <asp:ListItem Text="Platinum" Value="Platinum"></asp:ListItem>

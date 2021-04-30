@@ -137,10 +137,11 @@ namespace StockManagement
             }
             else {
 
-                MessageBox.Show("Sorry Desired Quantity not Available in Stock");
+                    ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Sorry Desired Quantity not Available in Stock');</script>");
 
+
+                }
             }
-        }
             catch (Exception err)
             {
                 string rawMessage = err.Message;

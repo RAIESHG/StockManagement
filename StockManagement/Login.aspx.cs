@@ -15,49 +15,10 @@ namespace StockManagement
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["usertype"] = "";
+            Session["counter"] = 0;
 
         }
-        public string runningOutofStock()
-        {
-            try { 
-            string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
-
-            SqlConnection mySqlConnection = new SqlConnection(connectionstring);
-            SqlCommand cmd = new SqlCommand("Select * from dbo.Stock where Quantity<10", mySqlConnection);
-            mySqlConnection.Open();
-            cmd.Connection = mySqlConnection;
-
-            string data = "";
-            string stock = "";
-            using (SqlDataReader QueryReader = cmd.ExecuteReader())
-            {
-                if (QueryReader.HasRows)
-                {
-                    Response.Redirect("AddItem.aspx");
-
-
-                    mySqlConnection.Close();
-
-                }
-                else {
-                    MessageBox.Show("Login Failure Please Try Again");
-
-
-                }
-
-            } return data;
-        }
-            catch (Exception err)
-            {
-                string rawMessage = err.Message;
-                string convertedMessage = rawMessage.Replace("'", "");
-                ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('" + convertedMessage + "');</script>");
-                return "invalid";
-
-
-            }
-}
-
+ 
         protected void Button1_Click(object sender, EventArgs e)
         {
             try { 
@@ -75,7 +36,7 @@ namespace StockManagement
                 if (QueryReader.HasRows)
                 {
                 Session["usertype"] = usernametb.Text;
-                Response.Redirect("AddItem.aspx");
+                Response.Redirect("Default.aspx");
                 
                     /*MessageBox.Show(stock);
                     runningOutofStock();
