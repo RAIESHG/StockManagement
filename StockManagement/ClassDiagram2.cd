@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StockManagement.About">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>About.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.AddCategory">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAgAAAAAAAAAAgAAEAQQAAAAAAAAAICAgA=</HashCode>
+      <FileName>AddCategory.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.AddItem">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAEAAwAEAAAAAEAAgAAAAYQAAAAgAAAgIAAgE=</HashCode>
+      <FileName>AddItem.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.AddMember">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAQAAEAAwAECAAAAAAAiAAAAQQCAAAgAAAAIAAiE=</HashCode>
+      <FileName>AddMember.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.AddStock" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAQAAAAAAAAAAgAAAAYQAAAAgAAAAIAAgA=</HashCode>
+      <FileName>AddStock.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.AddUser">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAEAAAAAAAAgAAEAQQAAAAAIAAAIAAgA=</HashCode>
+      <FileName>AddUser.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.BundleConfig">
+    <Position X="5.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.RouteConfig" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.Bill">
+    <Position X="4" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAMAAEACYAAAAAAAAABhAAAAQYACAAgAAAAIAAgE=</HashCode>
+      <FileName>Bill.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.Change_Password">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAEAAQAAAAAAAAAAgAAAAQQAAAAAAAAAIAAgA=</HashCode>
+      <FileName>ChangePassword.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement._Default">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAQAAAAAAQAAAAAgAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.Global">
+    <Position X="5.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.InactiveCustomers">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAA=</HashCode>
+      <FileName>InactiveCustomers.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.ItemStock">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAUAAQAAAAAAAAAAgAAAAQQAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ItemStock.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.Login">
+    <Position X="5.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAEAAAAAAAAgAAAAQQAAAAAIAAAIAAkA=</HashCode>
+      <FileName>Login.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.OutofStock">
+    <Position X="7.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAEAAQAAAAAACAAAgAAAAAQAAAAAAAAAIAAAA=</HashCode>
+      <FileName>OutofStock.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.PurchaseDetail">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAgEAAQAAAEEAAAAAgAAAAQQAAEAAAAAAIAIAA=</HashCode>
+      <FileName>PurchaseDetail.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.RemoveStock">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAABAAAAAAIAAAAAAAAAIAAAA=</HashCode>
+      <FileName>RemoveStock.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.SiteMaster">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.Site_Mobile">
+    <Position X="5.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAACAAAAAIAAAIAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Site.Mobile.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.UnsoldItems">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>UnsoldItems.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.UserChangePassword">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAABAAAAAQQAAAAAIAAAIAAgA=</HashCode>
+      <FileName>UserChangePassword.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StockManagement.ViewSwitcher">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAIA=</HashCode>
+      <FileName>ViewSwitcher.ascx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
