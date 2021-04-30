@@ -24,7 +24,7 @@
             </td>
             <td>
                 <asp:TextBox ID="quantitytb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
             </td>
 
@@ -32,7 +32,7 @@
 
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Stock" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1"  ValidationGroup='valGroup1' runat="server" OnClick="Button1_Click" Text="Add Stock" CssClass="btn btn-primary" />
                         </td>
         </tr>
     </table>

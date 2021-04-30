@@ -11,7 +11,7 @@
             </td>
             <td>
                  <asp:TextBox ID="userNametb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Field is required!" ControlToValidate="userNametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="userNametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
                 
                 
@@ -24,7 +24,7 @@
             </td>
             <td>
                  <asp:TextBox ID="passwordtb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="passwordtb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ValidationGroup='valGroup1'  runat="server" ErrorMessage="Field is required!" ControlToValidate="passwordtb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
 
             </td>
@@ -33,7 +33,7 @@
         
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right;" ID="Button1" runat="server" OnClick="Button1_Click" Text="Add User" CssClass="btn btn-primary"/>
+                            <asp:Button style="float:right;" ID="Button1"  ValidationGroup='valGroup1' runat="server" OnClick="Button1_Click" Text="Add User" CssClass="btn btn-primary"/>
                             <asp:GridView ID="GridView1" runat="server" class="table" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="Userid">
                                 <Columns>
                                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

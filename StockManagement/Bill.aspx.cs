@@ -133,8 +133,9 @@ namespace StockManagement
                 commandd.ExecuteNonQuery();
                 commandd.Dispose();
                 mySqlConnection.Close();
-                   
-            }
+                    ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Stock has been updated');</script>");
+
+                }
             else {
 
                     ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", "<script>alert('Sorry Desired Quantity not Available in Stock');</script>");

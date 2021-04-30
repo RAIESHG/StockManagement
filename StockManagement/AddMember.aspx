@@ -11,7 +11,7 @@
             </td>
             <td>
                  <asp:TextBox ID="membernametb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Field is required!" ControlToValidate="membernametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator  ValidationGroup='valGroup1' ID="RequiredFieldValidator2" runat="server" ErrorMessage="Field is required!" ControlToValidate="membernametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
                 
                 
@@ -24,7 +24,7 @@
             </td>
             <td>
                  <asp:TextBox ID="addresstb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="addresstb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="addresstb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
 
             </td>
@@ -36,7 +36,7 @@
             </td>
             <td>
                 <asp:TextBox ID="contactnumbertb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Field is required!" ControlToValidate="contactnumbertb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="contactnumbertb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
             </td>
         </tr>
@@ -47,7 +47,7 @@
             </td>
             <td>
                 <asp:TextBox ID="emailtb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Field is required!" ControlToValidate="emailtb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="emailtb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
             </td>
         </tr>
@@ -70,7 +70,7 @@
         </tr>
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right;" ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Member" CssClass="btn btn-primary"/>
+                            <asp:Button style="float:right;" ID="Button1" runat="server"  ValidationGroup='valGroup1'  OnClick="Button1_Click" Text="Add Member" CssClass="btn btn-primary"/>
                         </td>
         </tr>
              <div style="align-items: center;justify-content: center;">

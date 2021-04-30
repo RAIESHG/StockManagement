@@ -9,19 +9,19 @@
                 <asp:Label ID="Label1" runat="server" Text="Item Name" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="itemnametb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="itemnametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="itemnametb"  ValidationGroup='valGroup1'  runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="itemnametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
             </td>
             
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Description" Height="2em" Width="30em"></asp:Label>
+                <asp:Label ID="Label4" runat="server"  Text="Description" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="descriptiontb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Field is required!" ControlToValidate="descriptiontb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="descriptiontb" runat="server"  ValidationGroup='valGroup1' Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="descriptiontb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
 
             </td>
@@ -32,8 +32,8 @@
                 <asp:Label ID="Label5" runat="server" Text="Price" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="pricetb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Field is required!" ControlToValidate="pricetb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="pricetb" runat="server"  ValidationGroup='valGroup1' Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="pricetb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
             </td>
         </tr>
@@ -53,14 +53,14 @@
                <asp:Label ID="id" runat="server" Text="Quantity" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
-                 <asp:TextBox ID="quantitytb" runat="server" Height="2em" Width="30em"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                 <asp:TextBox ID="quantitytb"  ValidationGroup='valGroup1' runat="server" Height="2em" Width="30em"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="quantitytb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
             </td>
         </tr>
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server"  ValidationGroup='valGroup1' OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
                             <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="ItemCode" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True">
                                 <Columns>

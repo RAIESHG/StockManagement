@@ -9,7 +9,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="catnametb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Field is required!" ControlToValidate="catnametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="catnametb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
                 </td>
             </tr>
@@ -18,14 +18,14 @@
                     <asp:Label ID="Label2" runat="server" Text="Category Description" Height="2em" Width="30em"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="categorydesctb"  runat="server" Height="2em" Width="30em"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Field is required!" ControlToValidate="categorydesctb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="categorydesctb"    runat="server" Height="2em" Width="30em"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  ValidationGroup='valGroup1' runat="server" ErrorMessage="Field is required!" ControlToValidate="categorydesctb" ForeColor="Red" Font-Size="Smaller"></asp:RequiredFieldValidator>
                
                 </td>
             </tr>
             <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click"  ValidationGroup='valGroup1' Text="Add Item" CssClass="btn btn-primary" />
                             <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="CategoryNumber" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True">
                                 <Columns>
                                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
