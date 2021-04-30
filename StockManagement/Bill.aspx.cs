@@ -1,12 +1,16 @@
-﻿using System;
+﻿using DGVPrinterHelper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+
+
 
 namespace StockManagement
 {
@@ -129,6 +133,22 @@ namespace StockManagement
                 commandd.ExecuteNonQuery();
                 commandd.Dispose();
                 mySqlConnection.Close();
+                    DataGridView gridView = new DataGridView();
+                    gridView.Columns.Add("Name");
+                    gridView.Rows.Add("kathir");
+
+
+                    DGVPrinter printer = new DGVPrinter();
+                    printer.Title = "\r\n\r\n Item Purchase Bill";
+                    printer.SubTitle = "RSSB Suppliers";
+                    printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                    printer.PageNumbers = true;
+                    printer.PageNumberInHeader = false;
+                    printer.PorportionalColumns = true;
+                    printer.HeaderCellAlignment = StringAlignment.Near;
+                    printer.Footer = "Quantity" + Quantity.ToString() + "Date : " + DateTime.Now.ToString("d");
+                    printer.FooterSpacing = 15;
+                    printer.PrintDataGridView(GridViews);
             }
             else {
 

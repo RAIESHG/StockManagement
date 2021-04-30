@@ -79,6 +79,11 @@
                         <td colspan="2">
                             <asp:Button style="float:right" ID="Button2" runat="server" OnClick="Button2_Click" Text="Confirm Sale " CssClass="btn btn-primary" />
 
+                            <asp:GridView ID="GridViews" runat="server" DataSourceID="SqlDataSource1">
+                            </asp:GridView>
+
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+
                         </td>
         </tr>
     </table>
