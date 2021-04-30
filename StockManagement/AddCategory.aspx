@@ -26,6 +26,28 @@
             <tr>
                         <td colspan="2">
                             <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CategoryNumber" DataSourceID="SqlDataSource1">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                    <asp:BoundField DataField="CategoryNumber" HeaderText="CategoryNumber" InsertVisible="False" ReadOnly="True" SortExpression="CategoryNumber" />
+                                    <asp:BoundField DataField="CategoryName" HeaderText="CategoryName" SortExpression="CategoryName" />
+                                    <asp:BoundField DataField="CategoryDescription" HeaderText="CategoryDescription" SortExpression="CategoryDescription" />
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [CategoryNumber] = @CategoryNumber" InsertCommand="INSERT INTO [Category] ([CategoryName], [CategoryDescription]) VALUES (@CategoryName, @CategoryDescription)" SelectCommand="SELECT * FROM [Category]" UpdateCommand="UPDATE [Category] SET [CategoryName] = @CategoryName, [CategoryDescription] = @CategoryDescription WHERE [CategoryNumber] = @CategoryNumber">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="CategoryNumber" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:Parameter Name="CategoryName" Type="String" />
+                                    <asp:Parameter Name="CategoryDescription" Type="String" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="CategoryName" Type="String" />
+                                    <asp:Parameter Name="CategoryDescription" Type="String" />
+                                    <asp:Parameter Name="CategoryNumber" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:SqlDataSource>
                         </td>
         </tr>
           

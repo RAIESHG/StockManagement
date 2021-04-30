@@ -62,6 +62,34 @@
                         <td colspan="2">
                             <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemCode" DataSourceID="SqlDataSource2">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                    <asp:BoundField DataField="ItemCode" HeaderText="ItemCode" InsertVisible="False" ReadOnly="True" SortExpression="ItemCode" />
+                                    <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
+                                    <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                                    <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                                    <asp:BoundField DataField="CategoryNumber" HeaderText="CategoryNumber" SortExpression="CategoryNumber" />
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Item] WHERE [ItemCode] = @ItemCode" InsertCommand="INSERT INTO [Item] ([ItemName], [Description], [Price], [CategoryNumber]) VALUES (@ItemName, @Description, @Price, @CategoryNumber)" SelectCommand="SELECT * FROM [Item]" UpdateCommand="UPDATE [Item] SET [ItemName] = @ItemName, [Description] = @Description, [Price] = @Price, [CategoryNumber] = @CategoryNumber WHERE [ItemCode] = @ItemCode">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="ItemCode" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:Parameter Name="ItemName" Type="String" />
+                                    <asp:Parameter Name="Description" Type="String" />
+                                    <asp:Parameter Name="Price" Type="Int32" />
+                                    <asp:Parameter Name="CategoryNumber" Type="Int32" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="ItemName" Type="String" />
+                                    <asp:Parameter Name="Description" Type="String" />
+                                    <asp:Parameter Name="Price" Type="Int32" />
+                                    <asp:Parameter Name="CategoryNumber" Type="Int32" />
+                                    <asp:Parameter Name="ItemCode" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:SqlDataSource>
                         </td>
         </tr>
     </table>

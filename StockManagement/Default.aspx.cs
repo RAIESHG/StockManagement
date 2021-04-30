@@ -1,21 +1,14 @@
-﻿using DGVPrinterHelper;
+﻿
 using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-using System.Drawing;
-=======
 using System.Configuration;
->>>>>>> 977469e0c4d40e212c4170310f6447b3bb2efc13
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-<<<<<<< HEAD
 using System.Windows.Forms;
-=======
-using System.Data.SqlClient;
-
->>>>>>> 977469e0c4d40e212c4170310f6447b3bb2efc13
 
 namespace StockManagement
 {
@@ -75,39 +68,13 @@ namespace StockManagement
         }
         private void btnSavePDF_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-
-            DialogResult messageResult = MessageBox.Show("Save this file into PDF?", "PDF File", MessageBoxButtons.OKCancel);
-
-            if (messageResult == DialogResult.Cancel)
-            {
-                MessageBox.Show("Operation Canceled By User", "PDF File");
-            }
-            else
-            {
-                sfd.Title = "Save As PDF";
-                sfd.Filter = "(*.pdf)|*.pdf";
-                sfd.InitialDirectory = @"C:\";
-
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    
-                        iTextSharp.text.Document doc = new iTextSharp.text.Document();
-                        PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
-                        doc.Open();
-                        doc.Add(new iTextSharp.text.Paragraph(""));
-                        doc.Close();
-                        rtb.Text = "";
-                        MessageBox.Show("PDF Saved Succesfully", "PDF File");
-
-                    }
+           
                   
 
-                }
+            
 
             }
 
         }
-    }
+   
 }

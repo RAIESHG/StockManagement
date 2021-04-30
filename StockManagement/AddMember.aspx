@@ -80,4 +80,34 @@
 
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Member]"></asp:SqlDataSource>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="MemberNumber" DataSourceID="SqlDataSource2">
+        <Columns>
+            <asp:BoundField DataField="MemberNumber" HeaderText="MemberNumber" InsertVisible="False" ReadOnly="True" SortExpression="MemberNumber" />
+            <asp:BoundField DataField="MemberName" HeaderText="MemberName" SortExpression="MemberName" />
+            <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+            <asp:BoundField DataField="ContactNumber" HeaderText="ContactNumber" SortExpression="ContactNumber" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            <asp:BoundField DataField="MemberType" HeaderText="MemberType" SortExpression="MemberType" />
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Member] WHERE [MemberNumber] = @MemberNumber" InsertCommand="INSERT INTO [Member] ([MemberName], [Address], [ContactNumber], [Email], [MemberType]) VALUES (@MemberName, @Address, @ContactNumber, @Email, @MemberType)" SelectCommand="SELECT * FROM [Member]" UpdateCommand="UPDATE [Member] SET [MemberName] = @MemberName, [Address] = @Address, [ContactNumber] = @ContactNumber, [Email] = @Email, [MemberType] = @MemberType WHERE [MemberNumber] = @MemberNumber">
+        <DeleteParameters>
+            <asp:Parameter Name="MemberNumber" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="MemberName" Type="String" />
+            <asp:Parameter Name="Address" Type="String" />
+            <asp:Parameter Name="ContactNumber" Type="String" />
+            <asp:Parameter Name="Email" Type="String" />
+            <asp:Parameter Name="MemberType" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="MemberName" Type="String" />
+            <asp:Parameter Name="Address" Type="String" />
+            <asp:Parameter Name="ContactNumber" Type="String" />
+            <asp:Parameter Name="Email" Type="String" />
+            <asp:Parameter Name="MemberType" Type="String" />
+            <asp:Parameter Name="MemberNumber" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
     </asp:Content>
