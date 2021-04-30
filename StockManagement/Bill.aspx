@@ -24,7 +24,7 @@
         <tr>
             <td>
 
-                <asp:Label ID="Label1" runat="server" Text="Quanitity" Height="2em" Width="30em"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Quantity" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
                      <asp:TextBox Height="2em" Width="30em" ID="TextBox1" runat="server"></asp:TextBox>
@@ -66,7 +66,7 @@
         <tr>
             <td>
 
-                <asp:Label ID="Label2" runat="server" Text="Select User" Height="2em" Width="30em"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Select Customer" Height="2em" Width="30em"></asp:Label>
             </td>
             <td>
                        <asp:DropDownList Height="2em" Width="30em" ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="MemberName" DataValueField="MemberNumber">

@@ -36,7 +36,7 @@
 <tr style="background-color:#507CD1;">
             <td style="color:white;"> ItemCode </td>
             <td style="color:white;"> Quantity </td>
-            <td style="color:white;">Date</td> 
+            <td style="color:white;">Last Restock Date</td> 
             <td style="color:white;">Status</td>
         </tr>
 

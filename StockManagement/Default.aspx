@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="StockManagement._Default" %>
 
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div id="MyPopup" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -38,41 +40,48 @@
             }
         </script>
 
-    <div class="jumbotron">
-        <h1>Default Page</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-        </p>
+        <div class="jumbotron" style="padding-bottom:10px;margin-bottom:10px;padding-top:10px;margin-top:10px">
+            <h1>Dashboard</h1>
+        <p class="lead">Graphs below display the stock and sales.</p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Total Items Purchased</h2>
+            <h2>
+                <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource2" Width="1065px" BorderlineWidth="0" Palette="Bright">
+                    <series>
+                        <asp:Series ChartArea="ChartArea1" ChartType="Line" Name="Series1" XValueMember="ItemName" YValueMembers="TotalSales">
+                        </asp:Series>
+                    </series>
+                    <chartareas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </chartareas>
+                </asp:Chart>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT Item.ItemName, SUM(CustomerPurchase.Quantity) AS TotalSales FROM CustomerPurchase INNER JOIN Item ON CustomerPurchase.ItemCode = Item.ItemCode GROUP BY Item.ItemName"></asp:SqlDataSource>
+            </h2>
+            <h2>Items Quantity</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                <asp:Chart ID="Chart2" runat="server" DataSourceID="SqlDataSource1" Width="1075px" BackImageWrapMode="Scaled" Palette="Excel">
+                    <series>
+                        <asp:Series Name="Series1" XValueMember="ItemName" YValueMembers="Quantity" YValuesPerPoint="2">
+                        </asp:Series>
+                    </series>
+                    <chartareas>
+                        <asp:ChartArea Name="ChartArea1">
+                        </asp:ChartArea>
+                    </chartareas>
+                </asp:Chart>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT Item.ItemName, Stock.Quantity FROM Item INNER JOIN Stock ON Item.ItemCode = Stock.ItemCode"></asp:SqlDataSource>
             </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+
+
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+            <h2>&nbsp;</h2>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
         </div>
     </div>
 

@@ -46,21 +46,22 @@
       <a runat="server"  href="~/">
           <img src="images/logo.png" />RBSS</a>
                
-                         <a runat="server" class="user" href="~/AddMember" >AddMember</a>
-                     <a runat="server" class="user" href="~/AddItem" >AddItem</a>
+                         <a runat="server" class="user" href="~/AddMember" >Add Member</a>
+                     <a runat="server" class="user" href="~/AddItem" >Add Item</a>
                           <a runat="server" class="user" href="~/AddStock" >Add Stock</a>
                           <a runat="server" class="user" href="~/AddCategory" >Add Category</a>
-                          <a runat="server" class="user" href="~/ItemStock" >Item Stock</a>
+                          <a runat="server" class="user" href="~/ItemStock" >Check Stock Status</a>
                        <a runat="server" class="user" href="~/Bill" >Generate Bill</a>
-                          <a runat="server" class="user" href="~/PurchaseDetail" >Purchase Detail</a>
-                     <a runat="server" class="user" href="~/OutofStock" >OutofStock Items</a>
+                          <a runat="server" class="user" href="~/PurchaseDetail" >View Purchase Detail</a>
+                     <a runat="server" class="user" href="~/OutofStock" >View Stock</a>
                         <a runat="server" class="user" href="~/RemoveStock" >Remove Stock</a>
-                        <a runat="server" class="user" href="~/UnsoldItems" >Unsold Items</a>
-                        <a runat="server" class="user" href="~/InactiveCustomers" >InActive Customers</a>    
+                        <a runat="server" class="user" href="~/UnsoldItems" >View Unsold Items</a>
+                        <a runat="server" class="user" href="~/InactiveCustomers" >View Inactive Customers</a>    
                         <a runat="server" class="admin" href="~/ChangePassword" >Change Password</a>  
                             <a runat="server" class="admin" href="~/AddUser" >Add User</a>   
-                            <a runat="server" class="user" href="~/Login">LogOut</a>   
                              <a runat="server" class="user" href="~/UserChangePassword">Change My Password</a>   
+                        <a runat="server" class="user" href="~/Login"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>   
+
 
                       <br/>  <br/>  <br/> <br/>     <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> 
                      

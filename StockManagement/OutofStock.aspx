@@ -3,7 +3,7 @@
        
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <h1  class="page-header">Check Stock Status</h1>
+     <h1  class="page-header">View Stock</h1>
      <p  class="page-header">The table displays the products that are running low on quantity (less than 10). Users can sort through the data. Users can also see all the items on stock. </p>
 
     <div style="display: flex;">
