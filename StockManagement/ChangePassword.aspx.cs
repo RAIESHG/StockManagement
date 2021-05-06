@@ -24,7 +24,7 @@ namespace StockManagement
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)    //Change password, only accessed by admin
+        protected void changePwBtnPress(object sender, EventArgs e)    //Change password, only accessed by admin
         {
             try { 
             int dropdown = int.Parse(DropDownList1.SelectedValue.ToString());

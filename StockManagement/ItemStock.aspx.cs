@@ -18,7 +18,7 @@ namespace StockManagement
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)    //trigger function onlcick
+        protected void checkStockBtnPress(object sender, EventArgs e)    //trigger function onlcick
         {
             getStockData();
         }

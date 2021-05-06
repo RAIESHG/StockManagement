@@ -23,7 +23,7 @@
 
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Check" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="checkStockBtnPress" Text="Check" CssClass="btn btn-primary" />
                         </td>
         </tr>
     </table>

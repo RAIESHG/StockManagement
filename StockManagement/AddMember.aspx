@@ -71,7 +71,7 @@
         </tr>
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right;" ID="Button1" runat="server"  ValidationGroup='valGroup1'  OnClick="Button1_Click" Text="Add Member" CssClass="btn btn-primary"/>
+                            <asp:Button style="float:right;" ID="Button1" runat="server"  ValidationGroup='valGroup1'  OnClick="addMemberBtnPress" Text="Add Member" CssClass="btn btn-primary"/>
                         </td>
         </tr>
              <div style="align-items: center;justify-content: center;">

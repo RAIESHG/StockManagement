@@ -33,7 +33,7 @@
 
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1"  ValidationGroup='valGroup1' runat="server" OnClick="Button1_Click" Text="Add Stock" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1"  ValidationGroup='valGroup1' runat="server" OnClick="addStockBtnPress" Text="Add Stock" CssClass="btn btn-primary" />
                         </td>
         </tr>
     </table>

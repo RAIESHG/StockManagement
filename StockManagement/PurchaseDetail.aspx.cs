@@ -23,7 +23,7 @@ namespace StockManagement
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)        
+        protected void viewPurchaseBtnPress(object sender, EventArgs e)        
         {
             
             prevPurchaseDetails();

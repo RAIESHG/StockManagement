@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Button style="float:right"  ID="Button2" runat="server" OnClick="Button1_Click" Text="Change Password" CssClass="btn btn-primary" />
+                    <asp:Button style="float:right"  ID="Button2" runat="server" OnClick="userChangePwBtnPress" Text="Change Password" CssClass="btn btn-primary" />
                 </td>
             </tr>
         </table>

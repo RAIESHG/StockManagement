@@ -18,7 +18,7 @@
     </table>
           <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right" ID="Button2" runat="server" OnClick="Button2_Click" Text="Remove Stock" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right" ID="Button2" runat="server" OnClick="removeStockBtnPress" Text="Remove Stock" CssClass="btn btn-primary" />
 
                         </td>
         </tr>

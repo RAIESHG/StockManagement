@@ -10,35 +10,35 @@
   <Class Name="StockManagement.AddCategory">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAEAAgAAAAAAAAAAgAAEAQQAAAAAAAAAICAgA=</HashCode>
+      <HashCode>AIAAAAAAEAAgAAQAAAAAAAgAAEAQAAAAAAAAAAICAgA=</HashCode>
       <FileName>AddCategory.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.AddItem">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIABAAAAEAAwAEAAAAAEAAgAAAAYQAAAAgAAAgIAAgE=</HashCode>
+      <HashCode>AIABAAAAEAAwAEAAAAAEAAgAAgAYAAAAAgAAAgIAAgE=</HashCode>
       <FileName>AddItem.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.AddMember">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAQAAEAAwAECAAAAAAAiAAAAQQCAAAgAAAAIAAiE=</HashCode>
+      <HashCode>AMAAAQAAEAAwAECAAAAAAAiAAAAQACAAAgAAAAIAAiE=</HashCode>
       <FileName>AddMember.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.AddStock">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAEAAQAAAAAAAAAAgAAAAYQAAAAgAAAAIAAgA=</HashCode>
+      <HashCode>AIAAAAAAEAAQAAAAAAQAAAgAAAAYAAAAAgAAAAIAAgA=</HashCode>
       <FileName>AddStock.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.AddUser">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAEAAAAEAAAAAAAAgAAEAQQAAAAAIAAAIAAgA=</HashCode>
+      <HashCode>AIAAAAAAEAAAAEACAAAAAAgAAEAQAAAAAAIAAAIAAgA=</HashCode>
       <FileName>AddUser.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,21 +59,21 @@
   <Class Name="StockManagement.Bill">
     <Position X="0.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAMAAEACYAAAAAAAAABgAAAAQYACAAgAAAAIAAgA=</HashCode>
+      <HashCode>AIAAAMAAEACYAAAAAAAAABhAAAAQYACAAgAAAAIAAgE=</HashCode>
       <FileName>Bill.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.Change_Password">
     <Position X="7.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAEAAQAAAAAAAAAAgAAAAQQAAAAAAAAAIAAgA=</HashCode>
+      <HashCode>ACAACAAAEAAQAAAAAAAAAAgAAAAQAAAAAAAAAAIAAgA=</HashCode>
       <FileName>ChangePassword.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement._Default" Collapsed="true">
     <Position X="4" Y="18.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAQAgAAEAAQAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAQAAAAAAQAAAAAgAAAAIAAAA=</HashCode>
       <FileName>Default.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -94,35 +94,35 @@
   <Class Name="StockManagement.ItemStock">
     <Position X="5.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAUAAQAAAAAAAAAAgAAAAQQAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAAUAIQAAAAAAAAAAgAAAAQAAAAAAAAAAIAAAA=</HashCode>
       <FileName>ItemStock.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.Login">
     <Position X="0.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAEAAAAAAAAgAAAAQQAAAAAIAAAIAAkA=</HashCode>
+      <HashCode>AAAAAAAAEAAAAEAAAAAAAAgAAAAQAAAAAQIAAAIAAkA=</HashCode>
       <FileName>Login.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.OutofStock">
     <Position X="5.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAQAAAAAACAABAAAAAAQAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AQAAAAEAEAAQAAAAAACAAAgAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>OutofStock.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.PurchaseDetail">
     <Position X="2.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAIAAAgEAAQAAAEEAAAAAgAAAAQQAAEAAAAAAIAIAA=</HashCode>
+      <HashCode>AQAIAAAgEAAQAAAEEAAAAAgAAAAQAAgEAAAAAAIAIAA=</HashCode>
       <FileName>PurchaseDetail.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StockManagement.RemoveStock">
     <Position X="4" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAABAAAAAAIAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAABAAAAIAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>RemoveStock.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -150,7 +150,7 @@
   <Class Name="StockManagement.UserChangePassword">
     <Position X="2.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAAABAAAAAQQAAAAAIAAAIAAgA=</HashCode>
+      <HashCode>AAAAAAAAEAAAAAAACAAAABAAAAAQAAAAAAIAAAIAAgA=</HashCode>
       <FileName>UserChangePassword.aspx.cs</FileName>
     </TypeIdentifier>
   </Class>

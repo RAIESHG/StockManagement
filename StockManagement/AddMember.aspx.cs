@@ -13,7 +13,7 @@ namespace StockManagement
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void addMemberBtnPress(object sender, EventArgs e)
         {
             try {
 

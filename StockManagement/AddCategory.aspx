@@ -26,7 +26,7 @@
             </tr>
             <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click"  ValidationGroup='valGroup1' Text="Add Item" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="addCategoryBtnPress"  ValidationGroup='valGroup1' Text="Add Item" CssClass="btn btn-primary" />
                             <br />
                             <br />
                             <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="CategoryNumber" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">

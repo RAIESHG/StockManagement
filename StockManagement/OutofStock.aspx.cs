@@ -91,7 +91,7 @@ namespace StockManagement
             }
 }
 
-        protected void Button1_Click(object sender, EventArgs e)        //trigger function onclick
+        protected void sortBtnPress(object sender, EventArgs e)        //trigger function onclick
         {
             getOutofStock();
         }

@@ -34,7 +34,7 @@
         
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right;" ID="Button1"  ValidationGroup='valGroup1' runat="server" OnClick="Button1_Click" Text="Add User" CssClass="btn btn-primary"/>
+                            <asp:Button style="float:right;" ID="Button1"  ValidationGroup='valGroup1' runat="server" OnClick="addUserBtnPress" Text="Add User" CssClass="btn btn-primary"/>
                             <asp:GridView ID="GridView1" runat="server" class="table" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="Userid" CellPadding="4" ForeColor="#333333" GridLines="None">
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>

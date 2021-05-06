@@ -19,7 +19,7 @@ namespace StockManagement
 
         }
  
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void loginBtnPress(object sender, EventArgs e)
         {
             try { 
             string connectionstring = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;

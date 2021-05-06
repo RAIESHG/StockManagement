@@ -70,7 +70,7 @@ where dbo.Item.ItemCode IN ((Select (dbo.Item.ItemCode) from dbo.Item
             }
 }
 
-        protected void Button2_Click(object sender, EventArgs e)        //onbuttonclick execute query
+        protected void removeStockBtnPress(object sender, EventArgs e)        //onbuttonclick execute query
         {
             List<int> itemlist = new List<int>();
 

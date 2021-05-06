@@ -31,7 +31,7 @@
 
    <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="Button1_Click" Text="Search" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server" OnClick="sortBtnPress" Text="Search" CssClass="btn btn-primary" />
                         </td>
         </tr>
         

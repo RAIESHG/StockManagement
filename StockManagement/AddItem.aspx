@@ -61,7 +61,7 @@
         </tr>
         <tr>
                         <td colspan="2">
-                            <asp:Button style="float:right"  ID="Button1" runat="server"  ValidationGroup='valGroup1' OnClick="Button1_Click" Text="Add Item" CssClass="btn btn-primary" />
+                            <asp:Button style="float:right"  ID="Button1" runat="server"  ValidationGroup='valGroup1' OnClick="addItemBtnPress" Text="Add Item" CssClass="btn btn-primary" />
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
                             <br />
                             <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="ItemCode" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">

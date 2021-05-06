@@ -23,7 +23,7 @@ namespace StockManagement
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)    //The user data inserted in the textfield is retrieved and added to the user database table.
+        protected void addUserBtnPress(object sender, EventArgs e)    //The user data inserted in the textfield is retrieved and added to the user database table.
 
 
         {

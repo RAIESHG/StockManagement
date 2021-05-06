@@ -65,7 +65,7 @@
         <tr>
             <td colspan="2" style="height: 39px" class="text-right">
 
-                             <asp:Button style="float:right" ID="Button1" runat="server" OnClick="Button1_Click" Text="View" CssClass="btn btn-primary"/>
+                             <asp:Button style="float:right" ID="Button1" runat="server" OnClick="viewPurchaseBtnPress" Text="View" CssClass="btn btn-primary"/>
 
                         </td>
 

@@ -16,7 +16,7 @@ namespace StockManagement
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)    //Retrieves the provided password from the user and updates it in the database of the specific user.
+        protected void userChangePwBtnPress(object sender, EventArgs e)    //Retrieves the provided password from the user and updates it in the database of the specific user.
 
 
         {
