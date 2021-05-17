@@ -71,7 +71,7 @@
                                     <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
                                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                                     <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                                    <asp:BoundField DataField="CategoryNumber" HeaderText="CategoryNumber" SortExpression="CategoryNumber" />
+                                    <asp:BoundField DataField="CategoryNumber" HeaderText="CategoryNumber" SortExpression="CategoryNumber" ReadOnly="True" />
                                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                                 </Columns>
                                 <EditRowStyle BackColor="#2461BF" />
