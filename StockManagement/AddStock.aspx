@@ -60,7 +60,7 @@
       </asp:GridView>
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" SelectCommand="SELECT * FROM [Item]"></asp:SqlDataSource>
 
-      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Stock] WHERE [StockId] = @StockId" InsertCommand="INSERT INTO [Stock] ([ItemCode], [Quantity], [StockPurchaseDate]) VALUES (@ItemCode, @Quantity, @StockPurchaseDate)" SelectCommand="SELECT * FROM [Stock]" UpdateCommand="UPDATE [Stock] SET [ItemCode] = @ItemCode, [Quantity] = @Quantity, [StockPurchaseDate] = @StockPurchaseDate WHERE [StockId] = @StockId">
+      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Stock] WHERE [StockId] = @StockId" InsertCommand="INSERT INTO [Stock] ([ItemCode], [Quantity], [StockPurchaseDate]) VALUES (@ItemCode, @Quantity, @StockPurchaseDate)" SelectCommand="SELECT * FROM [Stock]" UpdateCommand="UPDATE [Stock] SET [Quantity] = @Quantity WHERE [StockId] = @StockId">
           <DeleteParameters>
               <asp:Parameter Name="StockId" Type="Int32" />
           </DeleteParameters>

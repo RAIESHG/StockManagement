@@ -85,7 +85,7 @@
                                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
                             </asp:GridView>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Item] WHERE [ItemCode] = @ItemCode" InsertCommand="INSERT INTO [Item] ([ItemName], [Description], [Price], [CategoryNumber]) VALUES (@ItemName, @Description, @Price, @CategoryNumber)" SelectCommand="SELECT * FROM [Item]" UpdateCommand="UPDATE [Item] SET [ItemName] = @ItemName, [Description] = @Description, [Price] = @Price, [CategoryNumber] = @CategoryNumber WHERE [ItemCode] = @ItemCode">
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:StockManagementConnectionString %>" DeleteCommand="DELETE FROM [Item] WHERE [ItemCode] = @ItemCode" InsertCommand="INSERT INTO [Item] ([ItemName], [Description], [Price], [CategoryNumber]) VALUES (@ItemName, @Description, @Price, @CategoryNumber)" SelectCommand="SELECT * FROM [Item]" UpdateCommand="UPDATE [Item] SET [ItemName] = @ItemName, [Description] = @Description, [Price] = @Price WHERE [ItemCode] = @ItemCode">
                                 <DeleteParameters>
                                     <asp:Parameter Name="ItemCode" Type="Int32" />
                                 </DeleteParameters>
@@ -99,7 +99,6 @@
                                     <asp:Parameter Name="ItemName" Type="String" />
                                     <asp:Parameter Name="Description" Type="String" />
                                     <asp:Parameter Name="Price" Type="Int32" />
-                                    <asp:Parameter Name="CategoryNumber" Type="Int32" />
                                     <asp:Parameter Name="ItemCode" Type="Int32" />
                                 </UpdateParameters>
                             </asp:SqlDataSource>
