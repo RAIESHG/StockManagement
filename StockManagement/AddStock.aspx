@@ -44,7 +44,7 @@
               <asp:BoundField DataField="StockId" HeaderText="StockId" InsertVisible="False" ReadOnly="True" SortExpression="StockId" />
               <asp:BoundField DataField="ItemCode" HeaderText="ItemCode" SortExpression="ItemCode" ReadOnly="True" />
               <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-              <asp:BoundField DataField="StockPurchaseDate" HeaderText="StockPurchaseDate" SortExpression="StockPurchaseDate" ReadOnly="True" />
+              <asp:BoundField DataField="StockPurchaseDate" HeaderText="StockPurchaseDate" SortExpression="StockPurchaseDate" ReadOnly="True" DataFormatString="{0:d}" />
               <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
           </Columns>
           <EditRowStyle BackColor="#2461BF" />
